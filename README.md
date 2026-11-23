@@ -5,19 +5,19 @@ dan manajemen stok medis terpusat. Studi kasus: RS Cipto Mangunkusumo.
 
 Seluruh tampilan mengikuti desain dari Google Stitch (project *UI APlikasi Web RSCM*).
 
-## Tech Stack
+## Prasyarat
 
-- Next.js 16 (App Router, Turbopack) + React 19 + TypeScript
-- Tailwind CSS v4 (CSS-first, token di `src/app/globals.css`)
-- Font: Manrope (headline), Inter (body/label), JetBrains Mono (kode) + Material Symbols
-- Ikon: Material Symbols (halaman inti) dan lucide-react (halaman pendukung)
+- Node.js >= 20.9 (disarankan 22+) dan npm
+- Tidak ada variabel environment yang dibutuhkan
 
 ## Menjalankan
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000  -> redirect ke /login
+npm run dev      # http://localhost:3000
 ```
+
+`/` otomatis dialihkan ke `/login` (diatur di `next.config.ts`).
 
 Perintah lain:
 
@@ -27,13 +27,22 @@ npm run start    # jalankan hasil build
 npm run lint     # eslint
 ```
 
-Tidak ada variabel environment yang dibutuhkan. Data masih statis/dummy di dalam
-masing-masing halaman (belum terhubung backend).
+## Status Data
+
+Backend belum tersambung. Semua halaman memakai data dummy yang ditulis langsung
+di dalam komponennya.
 
 Login masih mock: `/login` sudah terisi kredensial contoh
 (`petugas.cssd@rsud-medika.go.id` / `DemoMedika2025#`). Menekan "Masuk" langsung
 mengarah ke `/dashboard` tanpa verifikasi, dan banner error hanya muncul bila ada
 field kosong. Belum ada proteksi route, jadi `/dashboard` bisa dibuka langsung.
+
+## Tech Stack
+
+- Next.js 16 (App Router, Turbopack) + React 19 + TypeScript
+- Tailwind CSS v4 (CSS-first, token di `src/app/globals.css`)
+- Font: Manrope (headline), Inter (body/label), JetBrains Mono (kode) + Material Symbols
+- Ikon: Material Symbols (halaman inti) dan lucide-react (halaman pendukung)
 
 ## Struktur Folder
 
@@ -42,24 +51,23 @@ src/
   app/
     layout.tsx              # root layout + font + Material Symbols
     globals.css             # design token (@theme) dari Stitch
-    page.tsx                # redirect / -> /login
-    login/page.tsx          # halaman login (standalone)
-    (dashboard)/
-      layout.tsx            # membungkus semua halaman dashboard
-      dashboard/            # + 18 halaman lain (lihat daftar route)
+    login/page.tsx          # halaman login (standalone, tanpa sidebar)
+    (dashboard)/            # 18 halaman; layout.tsx = shell Sidebar + Header
   components/
     layout/                 # DashboardLayout, Sidebar, Header
     ui/                     # Button, Card, Badge, Input, Select, Table, StatCard, Switch
   lib/utils.ts              # helper cn()
-stitch-html/                # referensi: HTML asli dari Google Stitch + catatan konversi
+stitch-html/                # referensi HTML asli Google Stitch + CONVERSION.md
 public/                     # aset statis
 ```
+
+`stitch-html/` hanya bahan referensi desain saat konversi, tidak dipakai saat runtime.
 
 ## Daftar Route
 
 | Route | Keterangan |
 | --- | --- |
-| `/` | redirect ke `/login` |
+| `/` | redirect ke `/login` (via `next.config.ts`) |
 | `/login` | masuk (standalone, tanpa sidebar) |
 | `/dashboard` | ringkasan + KPI |
 | `/data-alat` | master alat (pencarian, filter, modal nonaktifkan) |
@@ -71,6 +79,7 @@ public/                     # aset statis
 | `/batch-sterilisasi` | daftar batch sterilisasi CSSD |
 | `/detail-batch` | detail batch sterilisasi |
 | `/konfirmasi-penerimaan` | konfirmasi serah terima unit |
+| `/detail-konfirmasi` | detail konfirmasi penerimaan |
 | `/daftar-laporan` | daftar laporan |
 | `/detail-laporan` | detail laporan |
 | `/manajemen-pengguna` | manajemen user & role |
@@ -88,3 +97,9 @@ tipografi, radius). Contoh: `bg-surface-container-lowest`, `text-on-surface`,
 Catatan: token spacing bernama dari Stitch (`p-space-md` dll.) diikuti spesifikasi
 Tailwind v4 yang tidak mendukung `--spacing-*` bernama, sehingga dipetakan ke skala
 numerik (`p-space-md` → `p-4`). Lihat `stitch-html/CONVERSION.md`.
+
+## Catatan Pengembangan
+
+- `AGENTS.md` di root ditulis otomatis oleh `next dev`; jangan dihapus manual.
+- Halaman inti memakai kelas token langsung (Material Symbols), halaman pendukung
+  memakai komponen di `src/components/ui`.

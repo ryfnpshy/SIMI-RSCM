@@ -1,0 +1,6 @@
+﻿* text=auto eol=lf
+
+# aset biner jangan dinormalisasi
+*.png binary
+*.ico binary
+*.jpg binary
