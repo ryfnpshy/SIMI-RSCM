@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Select } from "@/components/ui/Select"
-import { Save, Bell, Shield, Database, Palette, Globe, Users, Key, Printer, FileSpreadsheet, Download, Upload, Trash2, ToggleLeft, ToggleRight, Eye, EyeOff, Settings, CheckCircle, XCircle, Plus, FileText, Upload as UploadIcon } from "lucide-react"
+import { Save, Bell, Shield, Database, Palette, Users, FileSpreadsheet, Download, Trash2, Settings, CheckCircle, XCircle, Plus, FileText, Upload as UploadIcon } from "lucide-react"
 import { Switch } from "@/components/ui/Switch"
 
 const settingsTabs = [

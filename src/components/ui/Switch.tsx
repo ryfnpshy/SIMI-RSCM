@@ -20,7 +20,8 @@ const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
         className={cn(
           "relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-container-lowest",
           checked ? "bg-primary" : "bg-outline-variant",
-          disabled && "opacity-50 cursor-not-allowed"
+          disabled && "opacity-50 cursor-not-allowed",
+          className
         )}
         {...props}
       >

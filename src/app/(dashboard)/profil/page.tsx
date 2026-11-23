@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { useState } from "react"
@@ -5,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Select } from "@/components/ui/Select"
-import { Users, Save, Key, Bell, Shield, Palette, Mail, Phone, Building2, Camera, Eye, EyeOff, CheckCircle, AlertTriangle, XCircle, Loader2, LogOut, Download, Upload, User, Trash2 } from "lucide-react"
+import { Save, Key, Bell, Shield, Palette, Camera, CheckCircle, LogOut, User, Trash2 } from "lucide-react"
 import { Switch } from "@/components/ui/Switch"
 import { Badge } from "@/components/ui/Badge"
 

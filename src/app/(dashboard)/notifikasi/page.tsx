@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
+import { Card, CardContent } from "@/components/ui/Card"
 import { Table } from "@/components/ui/Table"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Select } from "@/components/ui/Select"
-import { Bell, Search, Filter, Download, Calendar, Plus, Eye, Edit, Trash2, CheckCircle, AlertTriangle, Info, Mail, BellRing, BellOff, Check, X } from "lucide-react"
+import { Bell, Search, Filter, Download, Calendar, Eye, Trash2, CheckCircle, AlertTriangle, Info, BellRing, BellOff, Check, X } from "lucide-react"
 import Link from "next/link"
 
 const notificationsData = [

@@ -5,10 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { Table } from "@/components/ui/Table"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
-import { Input } from "@/components/ui/Input"
-import { Select } from "@/components/ui/Select"
-import { ChevronLeft, ChevronRight, CheckCircle, AlertTriangle, XCircle, Loader2, Package, ClipboardCheck, PackageOpen, Search, Filter, Download, Calendar, Plus, Eye, Edit, Truck, Users, UserCheck, UserX, Key, Mail, Phone, Building2, Shield, LogOut, Activity, Settings, Bell, FileText, History, Clock } from "lucide-react"
-import Link from "next/link"
+import { ChevronLeft, ChevronRight, CheckCircle, XCircle, Calendar, Edit, Users, UserCheck, UserX, Key, Mail, Phone, Building2, Shield, LogOut, Activity, Settings, Bell, History, Clock } from "lucide-react"
 
 const userDetailData = {
   id: "1",

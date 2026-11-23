@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import { HTMLAttributes, forwardRef, ReactNode } from "react"
+import { ReactNode } from "react"
 
 export interface Column<T> {
   header: string

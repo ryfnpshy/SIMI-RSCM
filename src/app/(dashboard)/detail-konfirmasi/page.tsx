@@ -1,13 +1,13 @@
 "use client"
 
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
+import { Card, CardContent } from "@/components/ui/Card"
 import { Table } from "@/components/ui/Table"
 import { Badge } from "@/components/ui/Badge"
 import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/Input"
 import { Select } from "@/components/ui/Select"
-import { ChevronLeft, ChevronRight, CheckCircle, AlertTriangle, XCircle, Loader2, Package, ClipboardCheck, PackageOpen, Search, Filter, Download, Calendar, Plus, Eye, Edit, Truck, Clock } from "lucide-react"
+import { CheckCircle, AlertTriangle, XCircle, ClipboardCheck, PackageOpen, Search, Filter, Download, Eye, Clock } from "lucide-react"
 import Link from "next/link"
 
 const detailReceivingData = [
