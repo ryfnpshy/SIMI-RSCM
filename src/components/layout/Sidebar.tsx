@@ -62,9 +62,9 @@ export function Sidebar({ className, peran }: { className?: string; peran: Peran
             <Package className="h-5 w-5" aria-hidden="true" />
           </div>
           <div className="flex flex-col leading-none">
-            <span className="font-headline-sm text-headline-sm text-on-surface">SIM Inventori</span>
+            <span className="font-headline-sm text-headline-sm text-on-surface">SIM Inventori RSCM</span>
             <span className="font-label-code text-label-code uppercase tracking-wider text-primary">
-              RS Cipto Mangunkusumo
+              Unit CSSD &amp; Logistik Medis
             </span>
           </div>
         </div>

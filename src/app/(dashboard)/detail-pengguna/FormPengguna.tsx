@@ -3,6 +3,7 @@
 import { useActionState } from "react"
 import Link from "next/link"
 import { setPengguna } from "@/lib/actions/administrasi"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import { LABEL_PERAN } from "@/lib/nav"
 import type { BarisPengguna } from "@/lib/data"
 
@@ -19,6 +20,7 @@ export function FormPengguna({
   peran: PeranRingkas[]
 }) {
   const [state, formAction, pending] = useActionState(setPengguna, undefined)
+  useAksiSelesai(state)
 
   return (
     <form className="flex flex-col gap-4" action={formAction}>

@@ -1,7 +1,6 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { pesanDb } from "@/lib/data"
 import type { Hasil } from "@/lib/actions/inventori"
@@ -32,15 +31,16 @@ export async function setPengguna(_sebelumnya: Hasil | undefined, f: FormData): 
   return { pesan: "Data pengguna diperbarui." }
 }
 
-export async function aktifkanPengguna(f: FormData) {
+export async function aktifkanPengguna(f: FormData): Promise<{ tujuan: string }> {
   const id = teks(f, "id")
   const supabase = await createClient()
   const { error } = await supabase.rpc("api_set_pengguna", { p_id: id, p_status: "aktif" })
-  const tujuan = error
-    ? `/manajemen-pengguna?error=${encodeURIComponent(pesanDb(error.message))}`
-    : "/manajemen-pengguna?status=diaktifkan"
   revalidatePath("/manajemen-pengguna")
-  redirect(tujuan)
+  return {
+    tujuan: error
+      ? `/manajemen-pengguna?error=${encodeURIComponent(pesanDb(error.message))}`
+      : "/manajemen-pengguna?status=diaktifkan",
+  }
 }
 
 export async function buatLaporan(_sebelumnya: Hasil | undefined, f: FormData): Promise<Hasil> {
@@ -66,5 +66,5 @@ export async function buatLaporan(_sebelumnya: Hasil | undefined, f: FormData): 
 
   revalidatePath("/daftar-laporan")
   const id = (data as { id?: string })?.id
-  redirect(id ? `/detail-laporan?id=${id}` : "/daftar-laporan?status=dibuat")
+  return { tujuan: id ? `/detail-laporan?id=${id}` : "/daftar-laporan?status=dibuat" }
 }

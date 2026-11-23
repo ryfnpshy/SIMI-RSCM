@@ -3,9 +3,11 @@
 import { useActionState } from "react"
 import Link from "next/link"
 import { daftar } from "@/lib/actions/auth"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 
 export default function DaftarPage() {
   const [state, formAction, pending] = useActionState(daftar, undefined)
+  useAksiSelesai(state)
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center bg-surface p-4">
@@ -13,9 +15,9 @@ export default function DaftarPage() {
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-primary">badge</span>
           <div>
-            <h1 className="font-headline-md text-headline-md text-on-surface">Pengajuan Akun SIM Inventori</h1>
+            <h1 className="font-headline-md text-headline-md text-on-surface">Pengajuan Akun SIM Inventori RSCM</h1>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
-              RS Cipto Mangunkusumo — Unit CSSD &amp; Logistik Medis
+              RSUP Nasional Dr. Cipto Mangunkusumo — Unit CSSD &amp; Logistik Medis
             </p>
           </div>
         </div>

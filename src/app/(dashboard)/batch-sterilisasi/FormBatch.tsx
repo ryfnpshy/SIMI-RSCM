@@ -2,10 +2,12 @@
 
 import { useActionState } from "react"
 import { buatBatch } from "@/lib/actions/sterilisasi"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { RingkasAlat } from "@/lib/data"
 
 export function FormBatch({ alat }: { alat: RingkasAlat[] }) {
   const [state, formAction, pending] = useActionState(buatBatch, undefined)
+  useAksiSelesai(state)
   const reusable = alat.filter((item) => item.jenis === "reusable" && item.aktif)
 
   return (

@@ -1,9 +1,8 @@
 "use server"
 
-import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 
-export type HasilAksi = { error?: string; pesan?: string }
+export type HasilAksi = { error?: string; pesan?: string; tujuan?: string }
 
 function pesanRamah(pesan: string) {
   const p = pesan.toLowerCase()
@@ -48,7 +47,7 @@ export async function masuk(_sebelumnya: HasilAksi | undefined, formData: FormDa
     }
   }
 
-  redirect("/dashboard")
+  return { tujuan: "/dashboard" }
 }
 
 export async function daftar(_sebelumnya: HasilAksi | undefined, formData: FormData): Promise<HasilAksi> {
@@ -71,7 +70,7 @@ export async function daftar(_sebelumnya: HasilAksi | undefined, formData: FormD
 
   // Pengguna pertama otomatis menjadi Admin Inventori yang aktif (bootstrap),
   // sisanya menunggu aktivasi email + penetapan peran oleh admin.
-  if (data.session) redirect("/dashboard")
+  if (data.session) return { tujuan: "/dashboard" }
 
   return {
     pesan: "Pendaftaran tercatat. Buka tautan konfirmasi di email Anda, lalu tunggu Admin Inventori menetapkan peran dan unit.",
@@ -81,5 +80,5 @@ export async function daftar(_sebelumnya: HasilAksi | undefined, formData: FormD
 export async function keluar() {
   const supabase = await createClient()
   await supabase.auth.signOut()
-  redirect("/login")
+  return { tujuan: "/login" }
 }

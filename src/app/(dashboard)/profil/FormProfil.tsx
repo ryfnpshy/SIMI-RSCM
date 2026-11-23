@@ -2,6 +2,7 @@
 
 import { useActionState } from "react"
 import { perbaruiProfil, ubahKataSandi } from "@/lib/actions/profil"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { Profil } from "@/lib/auth"
 
 function Pesan({ error, pesan }: { error?: string; pesan?: string }) {
@@ -15,6 +16,8 @@ function Pesan({ error, pesan }: { error?: string; pesan?: string }) {
 export function FormProfil({ profil }: { profil: Profil }) {
   const [stateProfil, aksiProfil, pendingProfil] = useActionState(perbaruiProfil, undefined)
   const [stateSandi, aksiSandi, pendingSandi] = useActionState(ubahKataSandi, undefined)
+  useAksiSelesai(stateProfil)
+  useAksiSelesai(stateSandi)
 
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">

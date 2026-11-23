@@ -3,6 +3,7 @@
 import { useActionState, useState } from "react"
 import Link from "next/link"
 import { simpanAlat } from "@/lib/actions/inventori"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { AlatPenuh } from "@/lib/data"
 
 type UnitRingkas = { id: string; kode: string; nama: string; tipe: string }
@@ -25,6 +26,7 @@ export function FormAlat({
   aliasAwal?: AliasRow[]
 }) {
   const [state, formAction, pending] = useActionState(simpanAlat, undefined)
+  useAksiSelesai(state)
   const [catatan, setCatatan] = useState(alat?.catatan ?? "")
   const [aktif, setAktif] = useState(alat ? alat.aktif : true)
   const [aliases, setAliases] = useState<AliasRow[]>(

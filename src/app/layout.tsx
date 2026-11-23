@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Manrope, JetBrains_Mono } from "next/font/google";
+import { FlashBanner } from "@/components/ui/FlashBanner";
 import "./globals.css";
 
 const inter = Inter({
@@ -21,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SIM Inventori RS | Sistem Informasi Manajemen Inventori Rumah Sakit",
+  title: "SIM Inventori RSCM | RSUP Nasional Dr. Cipto Mangunkusumo",
   description:
-    "Platform operasional sterilisasi alat bedah, pelacakan barcode baki instrumen, dan manajemen stok medis terpusat — RS Cipto Mangunkusumo.",
+    "Platform operasional sterilisasi alat bedah, pelacakan kode unik instrumen, dan manajemen stok medis terpusat — RSUP Nasional Dr. Cipto Mangunkusumo (RSCM).",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       </head>
       <body className="min-h-full flex flex-col bg-surface text-on-surface font-sans">
         {children}
+        <FlashBanner />
       </body>
     </html>
   );

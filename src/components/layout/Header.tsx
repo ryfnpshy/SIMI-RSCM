@@ -3,6 +3,7 @@
 import { Bell, LogOut, Menu, Search } from "lucide-react"
 import Link from "next/link"
 import { keluar } from "@/lib/actions/auth"
+import { AksiForm } from "@/components/ui/AksiForm"
 import { LABEL_PERAN } from "@/lib/nav"
 import { inisial } from "@/lib/utils"
 import type { Profil } from "@/lib/auth"
@@ -60,7 +61,7 @@ export function Header({ profil, onMenuClick }: { profil: Profil; onMenuClick?: 
             </div>
           </Link>
 
-          <form action={keluar}>
+          <AksiForm aksi={keluar}>
             <button
               className="rounded-lg p-2 text-on-surface-variant transition-colors hover:bg-surface-container"
               title="Keluar"
@@ -68,7 +69,7 @@ export function Header({ profil, onMenuClick }: { profil: Profil; onMenuClick?: 
             >
               <LogOut className="h-5 w-5" />
             </button>
-          </form>
+          </AksiForm>
         </div>
       </div>
     </header>

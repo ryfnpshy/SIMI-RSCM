@@ -1,11 +1,10 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { pesanDb } from "@/lib/data"
 
-export type Hasil = { error?: string; pesan?: string }
+export type Hasil = { error?: string; pesan?: string; tujuan?: string }
 
 const teks = (f: FormData, k: string) => String(f.get(k) ?? "").trim()
 const angka = (f: FormData, k: string) => Number(f.get(k) ?? 0)
@@ -77,18 +76,19 @@ export async function simpanAlat(_sebelumnya: Hasil | undefined, f: FormData): P
 
   revalidatePath("/data-alat")
   revalidatePath("/status-alat")
-  redirect("/data-alat?status=tersimpan")
+  return { tujuan: "/data-alat?status=tersimpan" }
 }
 
-export async function setAlatAktif(f: FormData) {
+export async function setAlatAktif(f: FormData): Promise<{ tujuan: string; pesan?: string }> {
+  const aktif = teks(f, "aktif") === "true"
   const supabase = await createClient()
   const { error } = await supabase.rpc("api_set_alat_aktif", {
     p_id: teks(f, "id"),
-    p_aktif: teks(f, "aktif") === "true",
+    p_aktif: aktif,
   })
-  if (error) redirect(`/data-alat?error=${encodeURIComponent(pesanDb(error.message))}`)
   revalidatePath("/data-alat")
-  redirect("/data-alat?status=diperbarui")
+  if (error) return { tujuan: `/data-alat?error=${encodeURIComponent(pesanDb(error.message))}` }
+  return { tujuan: "/data-alat", pesan: aktif ? "Alat diaktifkan kembali." : "Alat dinonaktifkan." }
 }
 
 export async function simpanAlias(_sebelumnya: Hasil | undefined, f: FormData): Promise<Hasil> {
@@ -129,7 +129,7 @@ export async function catatMasuk(_sebelumnya: Hasil | undefined, f: FormData): P
   revalidatePath("/data-alat")
   revalidatePath("/riwayat-pergerakan")
   revalidatePath("/dashboard")
-  redirect(`/alat-masuk?status=tersimpan&nomor=${(data as { nomor?: string })?.nomor ?? ""}`)
+  return { tujuan: `/alat-masuk?status=tersimpan&nomor=${(data as { nomor?: string })?.nomor ?? ""}` }
 }
 
 /* -------------------------------------------------------- alat keluar */
@@ -158,7 +158,7 @@ export async function catatDistribusi(_sebelumnya: Hasil | undefined, f: FormDat
   revalidatePath("/data-alat")
   revalidatePath("/status-alat")
   revalidatePath("/dashboard")
-  redirect(`/alat-keluar?status=tersimpan&nomor=${(data as { nomor?: string })?.nomor ?? ""}`)
+  return { tujuan: `/alat-keluar?status=tersimpan&nomor=${(data as { nomor?: string })?.nomor ?? ""}` }
 }
 
 /* -------------------------------------------------------------- status */
@@ -208,5 +208,5 @@ export async function konfirmasiPenerimaan(_sebelumnya: Hasil | undefined, f: Fo
   revalidatePath("/status-alat")
   revalidatePath("/riwayat-pergerakan")
   revalidatePath("/dashboard")
-  redirect("/konfirmasi-penerimaan?status=dikonfirmasi")
+  return { tujuan: "/konfirmasi-penerimaan?status=dikonfirmasi" }
 }

@@ -4,6 +4,7 @@
 import { Suspense, useActionState, useState } from "react"
 import Link from "next/link"
 import { masuk } from "@/lib/actions/auth"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import { AlasanBanner } from "./AlasanBanner"
 
 export default function LoginPage() {
@@ -12,6 +13,7 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [ditolak, setDitolak] = useState(false)
   const [state, formAction, pending] = useActionState(masuk, undefined)
+  useAksiSelesai(state)
   const error = ditolak ? "" : state?.error ?? ""
 
   return (
@@ -28,10 +30,10 @@ export default function LoginPage() {
               <div className="relative z-10 flex flex-col gap-6">
                 <div className="flex items-center gap-2">
                   <div className="h-12 w-auto flex items-center justify-center">
-                    <img alt="RS Cipto Mangunkusumo" className="h-12 w-auto object-contain bg-white/90 p-2 rounded-lg shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkw6Z2F-BgP7kOxbqaEBa4TTqGUO9G3k5PqlxZMo3MJwFjNyb8bANAClOVzm5PvaksGNOA-nREj5bDDKFA1DzYtZwR6zmC566sEB4Q5aoFEGbq4wzNtEjjbOsS0G5xHn2q4x0vh8Ddl_1IDEPKaXPn54VYuXiKLEQXG7h9Zhy_eUnH_r5uGlFmF9dQ7fIlv49Bn7lVaYRx4tK__hzHP42RN3B2XawzPpUucv36QI8cqEV1eP90QqG0dA" />
+                    <img alt="RSUP Nasional Dr. Cipto Mangunkusumo" className="h-12 w-auto object-contain bg-white/90 p-2 rounded-lg shadow-sm" src="/Rscm_new.png" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="font-headline-sm text-headline-sm text-on-primary tracking-tight">RS Cipto Mangunkusumo</span>
+                    <span className="font-headline-sm text-headline-sm text-on-primary tracking-tight">RSUP Nasional Dr. Cipto Mangunkusumo</span>
                     <span className="font-label-md text-label-md text-primary-fixed uppercase tracking-wider">Unit CSSD &amp; Logistik Medis</span>
                   </div>
                 </div>
@@ -79,7 +81,7 @@ export default function LoginPage() {
               </div>
               <div className="relative z-10 pt-6 mt-6 flex items-center justify-between text-body-sm font-body-sm text-on-primary/60">
                 <span className="font-label-code text-label-code">HIPAA &amp; KARS Compliant</span>
-                <span>© 2025 SIMRS IT</span>
+                <span>© 2026 SIMRS RSCM</span>
               </div>
             </div>
 
@@ -88,13 +90,13 @@ export default function LoginPage() {
               <div className="w-full max-w-md mx-auto space-y-4">
                 {/* Portal Header */}
                 <div className="flex items-center gap-2 pb-1">
-                  <img alt="SIM Inventori RS" className="w-10 h-10 object-contain lg:hidden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkw6Z2F-BgP7kOxbqaEBa4TTqGUO9G3k5PqlxZMo3MJwFjNyb8bANAClOVzm5PvaksGNOA-nREj5bDDKFA1DzYtZwR6zmC566sEB4Q5aoFEGbq4wzNtEjjbOsS0G5xHn2q4x0vh8Ddl_1IDEPKaXPn54VYuXiKLEQXG7h9Zhy_eUnH_r5uGlFmF9dQ7fIlv49Bn7lVaYRx4tK__hzHP42RN3B2XawzPpUucv36QI8cqEV1eP90QqG0dA" />
+                  <img alt="SIM Inventori RSCM" className="w-10 h-10 object-contain lg:hidden" src="/Rscm_new.png" />
                   <div>
                     <div className="flex items-center gap-2">
-                      <h2 className="font-headline-md text-headline-md text-on-surface">SIM Inventori RS</h2>
+                      <h2 className="font-headline-md text-headline-md text-on-surface">SIM Inventori RSCM</h2>
                       <span className="px-2 py-0.5 rounded text-badge-sm font-badge-sm bg-surface-container-high text-secondary">MEDIS</span>
                     </div>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant">Sistem Informasi Manajemen Inventori Rumah Sakit</p>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant">Sistem Informasi Manajemen Inventori RSCM</p>
                   </div>
                 </div>
                 {/* Welcome Badge / Subheading */}
@@ -112,7 +114,7 @@ export default function LoginPage() {
                       <span className="material-symbols-outlined text-[20px] text-error shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>error</span>
                       <div className="flex flex-col text-body-sm font-body-sm">
                         <span className="font-label-md text-label-md font-semibold text-error">{error}</span>
-                        <span className="text-on-error-container/80 text-[11px] leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS.</span>
+                        <span className="text-on-error-container/80 text-[11px] leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS RSCM.</span>
                       </div>
                     </div>
                     <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setDitolak(true)} type="button">
@@ -126,11 +128,11 @@ export default function LoginPage() {
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface flex items-center justify-between" htmlFor="email">
                       <span>Alamat Email Kedinasan</span>
-                      <span className="text-on-surface-variant font-label-code text-[11px]">RSUD Domain</span>
+                      <span className="text-on-surface-variant font-label-code text-[11px]">Domain RSCM</span>
                     </label>
                     <div className="relative flex items-center">
                       <span className="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">mail</span>
-                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email" name="email" placeholder="petugas@rsud-medika.go.id" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} />
+                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email" name="email" placeholder="petugas@rscm.co.id" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} />
                     </div>
                   </div>
                   {/* Password Field */}
@@ -175,7 +177,7 @@ export default function LoginPage() {
                   {/* Submit Button */}
                   <button className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] disabled:opacity-70" type="submit" disabled={pending}>
                     <span className="material-symbols-outlined text-[20px]">login</span>
-                    <span>{pending ? "Memverifikasi..." : "Masuk ke SIM Inventori"}</span>
+                    <span>{pending ? "Memverifikasi..." : "Masuk ke SIM Inventori RSCM"}</span>
                   </button>
                 </form>
                 {/* System Protection Notice */}
@@ -196,7 +198,7 @@ export default function LoginPage() {
               {/* Footnote / System Status */}
               <div className="mt-6 pt-2 text-center">
                 <span className="font-label-code text-label-code text-outline text-[11px]">
-                  Server ID: MEDIKA-CSSD-01 • Enkripsi TLS 1.3 Aktif
+                  Server ID: RSCM-CSSD-01 • Enkripsi TLS 1.3 Aktif
                 </span>
               </div>
             </div>

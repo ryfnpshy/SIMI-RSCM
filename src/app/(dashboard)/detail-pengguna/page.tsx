@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { FormPengguna } from "./FormPengguna"
 import { PageHeader } from "@/components/ui/PageHeader"
 import { aktifkanPengguna } from "@/lib/actions/administrasi"
+import { AksiForm } from "@/components/ui/AksiForm"
 import { daftarPeran, daftarUnit, penggunaById } from "@/lib/data"
 import { LABEL_PERAN } from "@/lib/nav"
 
@@ -29,7 +30,7 @@ export default async function DetailPenggunaPage({
         ]}
         aksi={
           pengguna.status !== "aktif" ? (
-            <form action={aktifkanPengguna}>
+            <AksiForm aksi={aktifkanPengguna}>
               <input name="id" type="hidden" value={pengguna.id} />
               <button
                 className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container"
@@ -38,7 +39,7 @@ export default async function DetailPenggunaPage({
                 <span className="material-symbols-outlined text-base">how_to_reg</span>
                 Aktifkan Akun
               </button>
-            </form>
+            </AksiForm>
           ) : undefined
         }
       />

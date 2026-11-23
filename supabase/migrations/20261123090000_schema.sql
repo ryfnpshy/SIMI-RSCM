@@ -228,7 +228,7 @@ create table if not exists public.sterilisasi_log (
   jumlah     integer not null default 1 check (jumlah > 0),
   tahap      text not null check (tahap in (
                'penerimaan_kotor', 'pencucian', 'pengemasan',
-               'sterilisasi', 'pendinginan', 'penyimpanan')),
+               'sterilisasi', 'pendinginan', 'penyimpanan', 'terdistribusi')),
   petugas_id uuid references public.users (id),
   catatan    text,
   created_at timestamptz not null default now(),

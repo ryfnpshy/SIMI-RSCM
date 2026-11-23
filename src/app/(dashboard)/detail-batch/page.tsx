@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader"
 import { Table } from "@/components/ui/Table"
 import { Badge } from "@/components/ui/Badge"
 import { labelTahap, URUTAN_TAHAP } from "@/components/ui/StatusBadge"
+import { AksiForm } from "@/components/ui/AksiForm"
 import { majukanBatch, verifikasiBatch } from "@/lib/actions/sterilisasi"
 import { detailBatch } from "@/lib/data"
 
@@ -92,7 +93,7 @@ export default async function DetailBatchPage({
 
         <div className="mt-6 flex flex-wrap items-center gap-3">
           {!selesai && tahapBerikut && (
-            <form action={majukanBatch}>
+            <AksiForm aksi={majukanBatch}>
               <input name="batch_id" type="hidden" value={batch.id} />
               <input name="tahap" type="hidden" value={tahapBerikut} />
               <button
@@ -102,10 +103,10 @@ export default async function DetailBatchPage({
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
                 Majukan ke {labelTahap(tahapBerikut)}
               </button>
-            </form>
+            </AksiForm>
           )}
           {batch.tahap === "gagal" && (
-            <form action={majukanBatch}>
+            <AksiForm aksi={majukanBatch}>
               <input name="batch_id" type="hidden" value={batch.id} />
               <input name="tahap" type="hidden" value="pencucian" />
               <button
@@ -115,7 +116,7 @@ export default async function DetailBatchPage({
                 <span className="material-symbols-outlined text-base">restart_alt</span>
                 Restrerilisasi (kembali ke Pencucian)
               </button>
-            </form>
+            </AksiForm>
           )}
           {selesai && batch.tahap === "terdistribusi" && (
             <span className="flex items-center gap-2 font-label-lg text-label-lg text-primary">
@@ -143,7 +144,7 @@ export default async function DetailBatchPage({
               <Badge variant="default">Belum diuji</Badge>
             )}
           </div>
-          <form className="flex flex-col gap-3" action={verifikasiBatch}>
+          <AksiForm className="flex flex-col gap-3" aksi={verifikasiBatch}>
             <input name="batch_id" type="hidden" value={batch.id} />
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">Indikator Bowie-Dick</span>
@@ -183,7 +184,7 @@ export default async function DetailBatchPage({
               <span className="material-symbols-outlined text-base">verified</span>
               Simpan Hasil Verifikasi
             </button>
-          </form>
+          </AksiForm>
         </section>
 
         {/* Log tahap */}

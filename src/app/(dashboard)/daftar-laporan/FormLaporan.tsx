@@ -2,6 +2,7 @@
 
 import { useActionState } from "react"
 import { buatLaporan } from "@/lib/actions/administrasi"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { RingkasAlat } from "@/lib/data"
 import { JENIS_LAPORAN } from "@/lib/laporan"
 
@@ -9,6 +10,7 @@ type UnitRingkas = { id: string; kode: string; nama: string; tipe: string }
 
 export function FormLaporan({ unit, alat }: { unit: UnitRingkas[]; alat: RingkasAlat[] }) {
   const [state, formAction, pending] = useActionState(buatLaporan, undefined)
+  useAksiSelesai(state)
   const hariIni = new Date().toISOString().slice(0, 10)
   const awalBulan = `${hariIni.slice(0, 7)}-01`
   const kategori = Array.from(new Set(alat.map((item) => item.kategori))).sort()

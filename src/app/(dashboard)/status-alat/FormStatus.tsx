@@ -2,6 +2,7 @@
 
 import { useActionState } from "react"
 import { perbaruiStatus } from "@/lib/actions/inventori"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import { LABEL_STATUS } from "@/components/ui/StatusBadge"
 import type { BarisStok, RingkasAlat } from "@/lib/data"
 
@@ -19,6 +20,7 @@ export function FormStatus({
   alatTerpilih?: string
 }) {
   const [state, formAction, pending] = useActionState(perbaruiStatus, undefined)
+  useAksiSelesai(state)
 
   return (
     <form className="flex flex-col gap-4" action={formAction}>

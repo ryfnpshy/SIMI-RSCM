@@ -4,6 +4,7 @@
 import { useEffect, useMemo, useRef, useState, useTransition } from "react"
 import Link from "next/link"
 import { setAlatAktif } from "@/lib/actions/inventori"
+import { lanjutkanAksi } from "@/components/ui/aksiKlien"
 import type { RingkasAlat } from "@/lib/data"
 
 const PER_HALAMAN = 10
@@ -81,7 +82,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
     data.set("id", target.id)
     data.set("aktif", String(aktif))
     startTransition(async () => {
-      await setAlatAktif(data)
+      lanjutkanAksi(await setAlatAktif(data))
     })
   }
 
@@ -159,7 +160,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
             </div>
             <h2 className="font-headline-md text-headline-md font-bold tracking-tight text-white">Inventarisasi &amp; Pelacakan CSSD / Bedah</h2>
             <p className="font-body-md text-body-md text-on-primary-container opacity-90">
-              Kelola master data instrumen klinis, kode unik, serta standarisasi wadah sterilisasi siap pakai di seluruh instalasi RS Cipto Mangunkusumo.
+              Kelola master data instrumen klinis, kode unik, serta standarisasi wadah sterilisasi siap pakai di seluruh instalasi RSUP Nasional Dr. Cipto Mangunkusumo (RSCM).
             </p>
           </div>
           <div className="flex items-center gap-3 self-start md:self-auto shrink-0">

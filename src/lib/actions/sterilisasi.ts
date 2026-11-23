@@ -1,7 +1,6 @@
 "use server"
 
 import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation"
 import { createClient } from "@/lib/supabase/server"
 import { pesanDb } from "@/lib/data"
 import type { Hasil } from "@/lib/actions/inventori"
@@ -26,24 +25,25 @@ export async function buatBatch(_sebelumnya: Hasil | undefined, f: FormData): Pr
   revalidatePath("/batch-sterilisasi")
   revalidatePath("/status-alat")
   const id = (data as { id?: string })?.id
-  redirect(id ? `/detail-batch?id=${id}` : "/batch-sterilisasi?status=dibuat")
+  return { tujuan: id ? `/detail-batch?id=${id}` : "/batch-sterilisasi?status=dibuat" }
 }
 
-export async function majukanBatch(f: FormData) {
+export async function majukanBatch(f: FormData): Promise<{ tujuan: string }> {
   const supabase = await createClient()
   const { error } = await supabase.rpc("api_majukan_batch", {
     p_batch: teks(f, "batch_id"),
     p_tahap: teks(f, "tahap"),
     p_catatan: atauNull(teks(f, "catatan")),
   })
-  if (error) redirect(`/detail-batch?id=${teks(f, "batch_id")}&error=${encodeURIComponent(pesanDb(error.message))}`)
+  const id = teks(f, "batch_id")
+  if (error) return { tujuan: `/detail-batch?id=${id}&error=${encodeURIComponent(pesanDb(error.message))}` }
   revalidatePath("/batch-sterilisasi")
   revalidatePath("/detail-batch")
   revalidatePath("/status-alat")
-  redirect(`/detail-batch?id=${teks(f, "batch_id")}&status=maju`)
+  return { tujuan: `/detail-batch?id=${id}&status=maju` }
 }
 
-export async function verifikasiBatch(f: FormData) {
+export async function verifikasiBatch(f: FormData): Promise<{ tujuan: string }> {
   const supabase = await createClient()
   const { error } = await supabase.rpc("api_verifikasi_batch", {
     p_batch: teks(f, "batch_id"),
@@ -51,10 +51,11 @@ export async function verifikasiBatch(f: FormData) {
     p_biologis: teks(f, "biologis") === "true",
     p_catatan: atauNull(teks(f, "catatan")),
   })
-  if (error) redirect(`/detail-batch?id=${teks(f, "batch_id")}&error=${encodeURIComponent(pesanDb(error.message))}`)
+  const id = teks(f, "batch_id")
+  if (error) return { tujuan: `/detail-batch?id=${id}&error=${encodeURIComponent(pesanDb(error.message))}` }
   revalidatePath("/batch-sterilisasi")
   revalidatePath("/detail-batch")
   revalidatePath("/status-alat")
   revalidatePath("/dashboard")
-  redirect(`/detail-batch?id=${teks(f, "batch_id")}&status=verifikasi`)
+  return { tujuan: `/detail-batch?id=${id}&status=verifikasi` }
 }

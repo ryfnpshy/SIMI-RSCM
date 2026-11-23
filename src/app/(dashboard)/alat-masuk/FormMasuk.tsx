@@ -2,12 +2,14 @@
 
 import { useActionState } from "react"
 import { catatMasuk } from "@/lib/actions/inventori"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { RingkasAlat } from "@/lib/data"
 
 type UnitRingkas = { id: string; kode: string; nama: string; tipe: string }
 
 export function FormMasuk({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRingkas[] }) {
   const [state, formAction, pending] = useActionState(catatMasuk, undefined)
+  useAksiSelesai(state)
   const gudang = unit.find((item) => item.tipe === "gudang")
 
   return (

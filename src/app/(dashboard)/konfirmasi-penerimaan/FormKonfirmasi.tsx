@@ -2,6 +2,7 @@
 
 import { useActionState, useState } from "react"
 import { konfirmasiPenerimaan } from "@/lib/actions/inventori"
+import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { BarisKeluar } from "@/lib/data"
 
 export function FormKonfirmasi({
@@ -12,6 +13,7 @@ export function FormKonfirmasi({
   terpilih?: string
 }) {
   const [state, formAction, pending] = useActionState(konfirmasiPenerimaan, undefined)
+  useAksiSelesai(state)
   const [id, setId] = useState(terpilih ?? transaksi[0]?.id ?? "")
   const dipilih = transaksi.find((item) => item.id === id)
 
