@@ -1,24 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { Suspense, useActionState, useState } from "react"
+import Link from "next/link"
+import { masuk } from "@/lib/actions/auth"
+import { AlasanBanner } from "./AlasanBanner"
 
 export default function LoginPage() {
-  const router = useRouter()
-  const [email, setEmail] = useState("petugas.cssd@rsud-medika.go.id")
-  const [password, setPassword] = useState("DemoMedika2025#")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [showPassword, setShowPassword] = useState(false)
-  const [error, setError] = useState("")
-
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault()
-    if (!email.trim() || !password.trim()) {
-      setError("Email dan kata sandi wajib diisi.")
-      return
-    }
-    router.push("/dashboard")
-  }
+  const [ditolak, setDitolak] = useState(false)
+  const [state, formAction, pending] = useActionState(masuk, undefined)
+  const error = ditolak ? "" : state?.error ?? ""
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center bg-surface p-4">
@@ -50,7 +44,7 @@ export default function LoginPage() {
                     Sistem Inventori &amp; CSSD Terintegrasi
                   </h1>
                   <p className="font-body-md text-body-md text-on-primary/80 leading-relaxed">
-                    Platform operasional sterilisasi alat bedah, pelacakan barcode baki instrumen, dan manajemen stok medis terpusat.
+                    Platform operasional sterilisasi alat bedah, penelusuran kode unik instrumen, dan manajemen stok medis terpusat.
                   </p>
                 </div>
                 <div className="flex flex-col gap-4 mt-2">
@@ -60,7 +54,7 @@ export default function LoginPage() {
                     </div>
                     <div className="flex flex-col">
                       <span className="font-label-lg text-label-lg text-on-primary">Pelacakan Status Real-time</span>
-                      <span className="font-body-sm text-body-sm text-on-primary/70">Pemindaian cepat siklus alat dari ruang operasi hingga ruang simpan.</span>
+                      <span className="font-body-sm text-body-sm text-on-primary/70">Penelusuran kode unik alat dari ruang operasi hingga ruang simpan.</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -109,6 +103,9 @@ export default function LoginPage() {
                   <span className="font-body-sm text-body-sm text-on-surface-variant">Silakan masukkan kredensial resmi rumah sakit untuk mengakses unit operasional.</span>
                 </div>
                 {/* Alert / Validation Banner */}
+                <Suspense fallback={null}>
+                  <AlasanBanner />
+                </Suspense>
                 {error && (
                   <div className="bg-error-container text-on-error-container p-2 rounded-lg flex items-start justify-between gap-3 shadow-sm transition-all duration-200">
                     <div className="flex items-start gap-2.5">
@@ -118,13 +115,13 @@ export default function LoginPage() {
                         <span className="text-on-error-container/80 text-[11px] leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS.</span>
                       </div>
                     </div>
-                    <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setError("")} type="button">
+                    <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setDitolak(true)} type="button">
                       <span className="material-symbols-outlined text-[18px]">close</span>
                     </button>
                   </div>
                 )}
                 {/* Authentication Form */}
-                <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+                <form className="space-y-4" action={formAction} onSubmit={() => setDitolak(false)} noValidate>
                   {/* Email Field */}
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface flex items-center justify-between" htmlFor="email">
@@ -176,9 +173,9 @@ export default function LoginPage() {
                     </div>
                   </div>
                   {/* Submit Button */}
-                  <button className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]" type="submit">
+                  <button className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] disabled:opacity-70" type="submit" disabled={pending}>
                     <span className="material-symbols-outlined text-[20px]">login</span>
-                    <span>Masuk ke SIM Inventori</span>
+                    <span>{pending ? "Memverifikasi..." : "Masuk ke SIM Inventori"}</span>
                   </button>
                 </form>
                 {/* System Protection Notice */}
@@ -188,7 +185,11 @@ export default function LoginPage() {
                     <span>Sistem Terproteksi RBAC Rumah Sakit</span>
                   </div>
                   <p className="font-body-sm text-[11px] text-on-surface-variant">
-                    Pendaftaran akun baru hanya dilakukan oleh Administrator SIMRS &amp; Tim Kepegawaian Medis.
+                    Belum punya akun?{" "}
+                    <Link className="font-semibold text-primary hover:underline" href="/daftar">
+                      Ajukan pendaftaran
+                    </Link>{" "}
+                    — peran dan unit ditetapkan Admin Inventori.
                   </p>
                 </div>
               </div>

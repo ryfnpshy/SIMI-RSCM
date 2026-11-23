@@ -3,49 +3,8 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
-import {
-  LayoutDashboard,
-  Package,
-  PackageCheck,
-  Truck,
-  Activity,
-  History,
-  FlaskConical,
-  ClipboardCheck,
-  FileText,
-  Users,
-  Settings,
-  Bell,
-  User,
-} from "lucide-react"
-
-const navigation = [
-  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-  { name: "Data Alat", href: "/data-alat", icon: Package },
-  { name: "Alat Masuk", href: "/alat-masuk", icon: PackageCheck },
-  { name: "Alat Keluar / Distribusi", href: "/alat-keluar", icon: Truck },
-  { name: "Status Alat", href: "/status-alat", icon: Activity },
-  { name: "Riwayat Pergerakan", href: "/riwayat-pergerakan", icon: History },
-]
-
-const operasionalNavigation = [
-  { name: "Batch Sterilisasi", href: "/batch-sterilisasi", icon: FlaskConical },
-  { name: "Konfirmasi Penerimaan", href: "/konfirmasi-penerimaan", icon: ClipboardCheck },
-]
-
-const laporanNavigation = [
-  { name: "Daftar Laporan", href: "/daftar-laporan", icon: FileText },
-]
-
-const administrasiNavigation = [
-  { name: "Manajemen Pengguna", href: "/manajemen-pengguna", icon: Users },
-]
-
-const settingsNavigation = [
-  { name: "Pengaturan", href: "/pengaturan", icon: Settings },
-  { name: "Notifikasi", href: "/notifikasi", icon: Bell },
-  { name: "Profil", href: "/profil", icon: User },
-]
+import { Package } from "lucide-react"
+import { navigasiUntuk, type ItemNav, type Peran } from "@/lib/nav"
 
 function NavSection({
   title,
@@ -53,7 +12,7 @@ function NavSection({
   pathname,
 }: {
   title?: string
-  items: typeof navigation
+  items: ItemNav[]
   pathname: string
 }) {
   return (
@@ -85,8 +44,9 @@ function NavSection({
   )
 }
 
-export function Sidebar({ className }: { className?: string }) {
+export function Sidebar({ className, peran }: { className?: string; peran: Peran }) {
   const pathname = usePathname()
+  const grup = navigasiUntuk(peran)
 
   return (
     <aside
@@ -111,11 +71,14 @@ export function Sidebar({ className }: { className?: string }) {
 
         {/* Navigation */}
         <nav className="flex-1 space-y-3 overflow-y-auto p-3">
-          <NavSection items={navigation} pathname={pathname} />
-          <NavSection title="Operasional CSSD" items={operasionalNavigation} pathname={pathname} />
-          <NavSection title="Laporan" items={laporanNavigation} pathname={pathname} />
-          <NavSection title="Administrasi" items={administrasiNavigation} pathname={pathname} />
-          <NavSection title="Pengaturan" items={settingsNavigation} pathname={pathname} />
+          {grup.map((bagian, index) => (
+            <NavSection
+              key={bagian.title ?? `utama-${index}`}
+              title={bagian.title}
+              items={bagian.items}
+              pathname={pathname}
+            />
+          ))}
         </nav>
 
         {/* RBAC notice */}

@@ -66,7 +66,7 @@ function Table<T>({
                   striped && rowIndex % 2 === 1 && "bg-surface-container-low/40",
                   hoverable && onRowClick && "hover:bg-surface-container-low cursor-pointer"
                 )}
-                onClick={() => onRowClick?.(row)}
+                {...(onRowClick ? { onClick: () => onRowClick(row) } : {})}
               >
                 {columns.map((column, colIndex) => (
                   <td
