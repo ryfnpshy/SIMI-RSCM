@@ -2,10 +2,23 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 
 export default function LoginPage() {
+  const router = useRouter()
+  const [email, setEmail] = useState("petugas.cssd@rsud-medika.go.id")
+  const [password, setPassword] = useState("DemoMedika2025#")
   const [showPassword, setShowPassword] = useState(false)
-  const [showError, setShowError] = useState(true)
+  const [error, setError] = useState("")
+
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    if (!email.trim() || !password.trim()) {
+      setError("Email dan kata sandi wajib diisi.")
+      return
+    }
+    router.push("/dashboard")
+  }
 
   return (
     <main className="min-h-screen w-full flex items-center justify-center bg-surface p-4">
@@ -96,22 +109,22 @@ export default function LoginPage() {
                   <span className="font-body-sm text-body-sm text-on-surface-variant">Silakan masukkan kredensial resmi rumah sakit untuk mengakses unit operasional.</span>
                 </div>
                 {/* Alert / Validation Banner */}
-                {showError && (
+                {error && (
                   <div className="bg-error-container text-on-error-container p-2 rounded-lg flex items-start justify-between gap-3 shadow-sm transition-all duration-200">
                     <div className="flex items-start gap-2.5">
                       <span className="material-symbols-outlined text-[20px] text-error shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>error</span>
                       <div className="flex flex-col text-body-sm font-body-sm">
-                        <span className="font-label-md text-label-md font-semibold text-error">Email atau kata sandi tidak cocok.</span>
+                        <span className="font-label-md text-label-md font-semibold text-error">{error}</span>
                         <span className="text-on-error-container/80 text-[11px] leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS.</span>
                       </div>
                     </div>
-                    <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setShowError(false)} type="button">
+                    <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setError("")} type="button">
                       <span className="material-symbols-outlined text-[18px]">close</span>
                     </button>
                   </div>
                 )}
                 {/* Authentication Form */}
-                <form className="space-y-4" onSubmit={(event) => event.preventDefault()}>
+                <form className="space-y-4" onSubmit={handleSubmit} noValidate>
                   {/* Email Field */}
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface flex items-center justify-between" htmlFor="email">
@@ -120,7 +133,7 @@ export default function LoginPage() {
                     </label>
                     <div className="relative flex items-center">
                       <span className="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">mail</span>
-                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email" name="email" placeholder="petugas@rsud-medika.go.id" required type="email" defaultValue="petugas.cssd@rsud-medika.go.id" />
+                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email" name="email" placeholder="petugas@rsud-medika.go.id" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} />
                     </div>
                   </div>
                   {/* Password Field */}
@@ -131,7 +144,7 @@ export default function LoginPage() {
                     </label>
                     <div className="relative flex items-center">
                       <span className="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">lock</span>
-                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-10 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="password" name="password" placeholder="Masukkan kata sandi" required type={showPassword ? "text" : "password"} defaultValue="DemoMedika2025#" />
+                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-10 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="password" name="password" placeholder="Masukkan kata sandi" type={showPassword ? "text" : "password"} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
                       <button aria-label="Tampilkan atau sembunyikan kata sandi" className="absolute right-3 text-outline hover:text-on-surface p-1 rounded transition-colors flex items-center justify-center" onClick={() => setShowPassword((value) => !value)} type="button">
                         <span className="material-symbols-outlined text-[18px]">{showPassword ? "visibility_off" : "visibility"}</span>
                       </button>

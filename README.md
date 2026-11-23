@@ -30,6 +30,11 @@ npm run lint     # eslint
 Tidak ada variabel environment yang dibutuhkan. Data masih statis/dummy di dalam
 masing-masing halaman (belum terhubung backend).
 
+Login masih mock: `/login` sudah terisi kredensial contoh
+(`petugas.cssd@rsud-medika.go.id` / `DemoMedika2025#`). Menekan "Masuk" langsung
+mengarah ke `/dashboard` tanpa verifikasi, dan banner error hanya muncul bila ada
+field kosong. Belum ada proteksi route, jadi `/dashboard` bisa dibuka langsung.
+
 ## Struktur Folder
 
 ```
