@@ -1,0 +1,549 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-high":"#e2e7ff","background":"#faf8ff","tertiary-container":"#a36700","on-tertiary-fixed":"#2a1700","on-surface":"#131b2e","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#004b73","surface-variant":"#dae2fd","on-primary-fixed-variant":"#005049","surface-dim":"#d2d9f4","secondary-fixed":"#cce5ff","outline":"#6d7a77","tertiary-fixed":"#ffddb8","inverse-on-surface":"#eef0ff","error-container":"#ffdad6","primary-fixed-dim":"#6bd8cb","on-primary":"#ffffff","tertiary":"#825100","inverse-surface":"#283044","primary-fixed":"#89f5e7","surface":"#faf8ff","error":"#ba1a1a","inverse-primary":"#6bd8cb","on-primary-container":"#f4fffc","surface-bright":"#faf8ff","on-surface-variant":"#3d4947","tertiary-fixed-dim":"#ffb95f","on-secondary-fixed":"#001d31","secondary":"#006398","surface-container":"#eaedff","secondary-container":"#5bb8fe","surface-tint":"#006a61","primary":"#00685f","on-tertiary-fixed-variant":"#653e00","on-secondary-container":"#00476e","on-tertiary":"#ffffff","primary-container":"#008378","on-primary-fixed":"#00201d","surface-container-low":"#f2f3ff","surface-container-highest":"#dae2fd","outline-variant":"#bcc9c6","on-error-container":"#93000a","on-error":"#ffffff","secondary-fixed-dim":"#93ccff","on-secondary":"#ffffff","on-tertiary-container":"#fffbff","on-background":"#131b2e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-xl":"2rem","space-md":"1rem","margin-mobile":"1rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","margin":"2rem","space-lg":"1.5rem","gutter":"1.5rem"},"fontFamily":{"body-sm":["Inter"],"headline-xl":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"],"badge-sm":["Inter"],"body-md":["Inter"],"headline-md":["Manrope"],"body-lg":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"headline-lg-mobile":["Manrope"],"headline-xl-mobile":["Manrope"],"label-code":["JetBrains Mono"]},"fontSize":{"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"badge-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DSAZshwktY31BCMjA_KXD9LIQy4QTFbn5FAKVY0N_eGWrPjrl9gyG43yuBVt65-xwR67O80pj4egbXyVjdh8rSL1yM1DQLhS1SO6bs5_cmu-q7hEBom7nqX2pe_i9JFaECrhSqOMc73RV9p-zkBcaQBYKyflhiVcGBZlkocsye5mrlfX4Gvut1r_0S7X4Wts_laJQ_6_OSFSlVIzUX7ZMnjdUHpkS54zkJAjk6g5EaxnuSmw8oYf8Q" alt="Logo Kemenkes RS Cipto Mangunkusumo" class="h-9 max-h-10 object-contain shrink-0"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-primary leading-tight tracking-tight">SIM-INSTALMED</span><span class="font-badge-sm text-badge-sm text-on-surface-variant uppercase tracking-wider">RSCM • Kemenkes RI</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Menu Navigasi</div></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="data-alat" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="">Data Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="status-alat" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="">Status Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="alat-masuk" href="#"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="">Alat Masuk</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="alat-keluar-distribusi" href="#"><span class="material-symbols-outlined text-[20px]">outbox</span><span class="">Alat Keluar / Distribusi</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="riwayat-pergerakan" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="">Riwayat Pergerakan</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="konfirmasi-penerimaan" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span class="">Konfirmasi Penerimaan</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="daftar-batch-sterilisasi" href="#"><span class="material-symbols-outlined text-[20px]">sanitizer</span><span class="">Sterilisasi CSSD</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="daftar-laporan" href="#"><span class="material-symbols-outlined text-[20px]">assessment</span><span class="">Laporan</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="manajemen-user" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="">Manajemen User</span></a></nav><div class="p-space-md bg-surface-container-low"><div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-medium">Status Sistem</span></div><span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed uppercase tracking-wide font-semibold">ONLINE</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md overflow-hidden"><div class="flex items-center gap-space-sm min-w-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DSAZshwktY31BCMjA_KXD9LIQy4QTFbn5FAKVY0N_eGWrPjrl9gyG43yuBVt65-xwR67O80pj4egbXyVjdh8rSL1yM1DQLhS1SO6bs5_cmu-q7hEBom7nqX2pe_i9JFaECrhSqOMc73RV9p-zkBcaQBYKyflhiVcGBZlkocsye5mrlfX4Gvut1r_0S7X4Wts_laJQ_6_OSFSlVIzUX7ZMnjdUHpkS54zkJAjk6g5EaxnuSmw8oYf8Q" alt="Logo Kemenkes RS Cipto Mangunkusumo" class="h-8 max-h-10 object-contain shrink-0"><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate leading-tight">RS Cipto Mangunkusumo (Kemenkes RI) - Sistem Informasi Manajemen Inventori &amp; Sterilisasi Alat Medis</h1></div></div><div class="flex items-center gap-space-lg shrink-0"><button aria-label="Notifikasi Operasional" class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-full" type="button"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-md bg-surface-container-low/50 py-1.5 px-space-md rounded-full"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UJmadc9VtSSlBhDNtMrgH_le0vYE_6emp_SKjUAz47GzUapoKC1eA75IeTD2z3Ved2dQATmXP1Pr2DzAYTk3aYEIeWxhbBDIMQZjnFDHB3IE_R2OuZRltgk2yNe8TDgP-7VIWWXrQS2Ep_mUJPvS-nXh8xLVp5_PBG28C4Xiqcw-lM0yF5nsqYwg7QUeCkEu8RBiXMG3WNiOAMCmDXcTboXH11QzlkkN0Zte_yHkbprGKQdfOZTGocQgU"><div class="flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Ratna Sari, S.Kep</span><span class="font-badge-sm text-badge-sm text-on-surface-variant">Petugas / Admin Inventori</span></div></div><button class="flex items-center gap-1.5 px-space-md py-space-sm bg-error-container text-on-error-container hover:bg-error hover:text-on-error rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Logout</span></button></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-margin"><div class="flex flex-col w-full">
+<script>
+    (function highlightActiveMenu() {
+      const activeLink = document.querySelector('nav a[data-path="manajemen-user"]');
+      if (activeLink) {
+        document.querySelectorAll('nav a').forEach(a => {
+          a.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          a.classList.add('text-on-surface-variant');
+        });
+        activeLink.classList.remove('text-on-surface-variant');
+        activeLink.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+      }
+    })();
+  </script>
+<div class="space-y-space-lg pb-space-xl">
+<!-- Top Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex flex-col gap-1">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">dashboard</span>
+<span class="">Dashboard</span>
+</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Manajemen User</span>
+</nav>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-1.5 h-6 bg-primary rounded-full"></div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Manajemen User</h1>
+<span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full font-badge-sm text-badge-sm bg-surface-container-high text-primary font-medium ml-2">
+            Akses Hak &amp; Peran
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-lg text-label-lg transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span class="">Ekspor CSV</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" type="button">
+<span class="material-symbols-outlined text-[20px]">person_add</span>
+<span class="">Tambah User</span>
+</button>
+</div>
+</div>
+<!-- Card 1: Filter & Pencarian User -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">filter_list</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Filter &amp; Pencarian User</h2>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-low text-primary rounded-full font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="">Total: 18 Pengguna Terdaftar</span>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-space-md items-center">
+<!-- Search Input -->
+<div class="lg:col-span-5 relative">
+<span class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full pl-10 pr-12 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/70 focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all shadow-sm" placeholder="Cari nama atau email..." type="text">
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="font-label-code text-badge-sm bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant">⌘K</span>
+</span>
+</div>
+<!-- Role Filter -->
+<div class="lg:col-span-3 relative">
+<select class="w-full appearance-none pl-3.5 pr-9 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all shadow-sm cursor-pointer">
+<option value="all">Semua Role</option>
+<option value="admin_inv">Admin Inventori</option>
+<option value="petugas_inv">Petugas Inventori</option>
+<option value="petugas_medis">Petugas Unit Medis</option>
+<option value="petugas_steril">Petugas Sterilisasi</option>
+</select>
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<!-- Status Filter -->
+<div class="lg:col-span-3 relative">
+<select class="w-full appearance-none pl-3.5 pr-9 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary focus:outline-none transition-all shadow-sm cursor-pointer">
+<option value="all">Semua Status</option>
+<option value="aktif">Aktif</option>
+<option value="nonaktif">Nonaktif</option>
+</select>
+<span class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<!-- Reset Button -->
+<div class="lg:col-span-1 flex justify-end">
+<button class="w-full sm:w-auto h-11 px-3 flex items-center justify-center rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface-variant transition-colors" title="Reset Filter" type="button">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Tabel Manajemen User -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="px-space-lg py-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-low/60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">manage_accounts</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Tabel Manajemen User</h2>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Menampilkan 8 dari 18 pengguna</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface disabled:opacity-40" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="p-1 rounded bg-surface-container text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse min-w-[960px]">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="py-3 px-space-lg font-semibold" scope="col">Nama</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Email</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Role</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Unit</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Status</th>
+<th class="py-3 px-space-md font-semibold" scope="col">Terakhir Login</th>
+<th class="py-3 px-space-lg font-semibold text-right" scope="col">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1: Ratna Sari -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-headline-sm text-body-md font-bold shadow-xs">
+                    RS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Ratna Sari, S.Kep</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 198904122014022001</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">ratna.sari@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Teal Badge: Admin Inventori -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Admin Inventori
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">Gudang Sentral</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-body-sm text-body-sm">Hari ini, 08:14 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Agus Supriyadi -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm text-body-md font-bold shadow-xs">
+                    AS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Agus Supriyadi</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 199201152018011003</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">agus.supriyadi@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Blue Badge: Petugas Inventori -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Petugas Inventori
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">Gudang Sentral</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-body-sm text-body-sm">Hari ini, 09:30 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Ns. Maya Safitri -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-headline-sm text-body-md font-bold shadow-xs">
+                    MS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Ns. Maya Safitri, S.Kep</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 199008242015032004</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">maya.safitri@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Purple Badge: Petugas Unit Medis -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Petugas Unit Medis
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">IBS (Kamar Operasi)</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-body-sm text-body-sm">Hari ini, 07:45 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Dedi Prasetyo -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-headline-sm text-body-md font-bold shadow-xs">
+                    DP
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Dedi Prasetyo, A.Md.Kes</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 199307192019021002</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">dedi.prasetyo@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Orange Badge: Petugas Sterilisasi -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Petugas Sterilisasi
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">CSSD Sterilisasi</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span class="font-body-sm text-body-sm">Hari ini, 08:00 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Hendri Irawan -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm text-body-md font-bold shadow-xs">
+                    HI
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Hendri Irawan, A.Md.Farm</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 199411032020011005</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">hendri.irawan@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Blue Badge: Petugas Inventori -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Petugas Inventori
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">Depo Farmasi &amp; Alkes</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+<span class="font-body-sm text-body-sm">Kemarin, 17:15 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 6: dr. Anindya Tri -->
+<tr class="bg-surface-container-lowest hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-variant flex items-center justify-center text-on-surface font-headline-sm text-body-md font-bold shadow-xs">
+                    AT
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">dr. Anindya Tri, Sp.An</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 198506142011012001</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">anindya.tri@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Purple Badge: Petugas Unit Medis -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Petugas Unit Medis
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">ICU Sentral</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+<span class="font-body-sm text-body-sm">04 Nov 2026, 14:20 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 7: Siti Nurhaliza -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-headline-sm text-body-md font-bold shadow-xs">
+                    SN
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Siti Nurhaliza, S.Tr.Kes</span>
+<span class="font-label-code text-badge-sm text-on-surface-variant">NIP. 199602282022032008</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface-variant">siti.nurhaliza@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Orange Badge: Petugas Sterilisasi -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-badge-sm text-badge-sm uppercase tracking-wide font-semibold shadow-xs">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Petugas Sterilisasi
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-on-surface font-medium">CSSD Sterilisasi</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-primary-fixed-dim/30 text-primary font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Aktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-outline">history</span>
+<span class="font-body-sm text-body-sm">03 Nov 2026, 11:10 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-error-container hover:bg-error hover:text-on-error text-on-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Nonaktifkan
+                  </button>
+</div>
+</td>
+</tr>
+<!-- Row 8 (NONAKTIF ROW): Bambang Sutrisno -->
+<tr class="bg-surface-container-high/30 opacity-75 hover:opacity-90 transition-opacity group">
+<td class="py-3.5 px-space-lg whitespace-nowrap">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-dim flex items-center justify-center text-outline font-headline-sm text-body-md font-bold">
+                    BS
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-semibold text-outline line-through">Bambang Sutrisno</span>
+<span class="font-label-code text-badge-sm text-outline">NIP. 198205102008121001</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-outline">bambang.sutrisno@rscm.co.id</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<!-- Purple Muted Badge -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-variant text-outline font-badge-sm text-badge-sm uppercase tracking-wide font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Petugas Unit Medis
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="font-body-md text-body-md text-outline">Rawat Inap Lt. 3</span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-dim text-outline font-label-md text-label-md font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                  Nonaktif
+                </span>
+</td>
+<td class="py-3.5 px-space-md whitespace-nowrap">
+<div class="flex items-center gap-1.5 text-outline">
+<span class="material-symbols-outlined text-[16px]">block</span>
+<span class="font-body-sm text-body-sm">12 Agu 2026 (Nonaktif)</span>
+</div>
+</td>
+<td class="py-3.5 px-space-lg whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Ubah
+                  </button>
+<button class="px-2.5 py-1 rounded bg-primary-fixed hover:bg-primary hover:text-on-primary text-on-primary-fixed-variant font-label-md text-label-md font-semibold transition-colors" type="button">
+                    Aktifkan
+                  </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-lg py-space-md bg-surface-container-low/40 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+          Menampilkan baris 1-8 dari total 18 data pengguna SIM-INSTALMED RSCM
+        </span>
+<div class="flex items-center gap-1">
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container">Sebelumnya</button>
+<button class="w-8 h-8 rounded bg-primary text-on-primary font-label-md text-label-md font-bold">1</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">2</button>
+<button class="w-8 h-8 rounded bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container font-label-md text-label-md">3</button>
+<button class="px-3 py-1 rounded bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md hover:bg-surface-container">Selanjutnya</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

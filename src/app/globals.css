@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+ * SIMI-RSCM design tokens (generated from Google Stitch project
+ * "UI APlikasi Web RSCM" — projects/11347591501043409899).
+ * Keep these in sync with the Stitch design theme.
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Brand + Material-3 semantic colors */
+  --color-background: #faf8ff;
+  --color-surface: #faf8ff;
+  --color-surface-bright: #faf8ff;
+  --color-surface-dim: #d2d9f4;
+  --color-surface-variant: #dae2fd;
+  --color-surface-tint: #006a61;
+  --color-surface-container: #eaedff;
+  --color-surface-container-low: #f2f3ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-high: #e2e7ff;
+  --color-surface-container-highest: #dae2fd;
+  --color-on-surface: #131b2e;
+  --color-on-surface-variant: #3d4947;
+  --color-on-background: #131b2e;
+
+  --color-primary: #00685f;
+  --color-primary-container: #008378;
+  --color-primary-fixed: #89f5e7;
+  --color-primary-fixed-dim: #6bd8cb;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #f4fffc;
+  --color-on-primary-fixed: #00201d;
+  --color-on-primary-fixed-variant: #005049;
+  --color-inverse-primary: #6bd8cb;
+
+  --color-secondary: #006398;
+  --color-secondary-container: #5bb8fe;
+  --color-secondary-fixed: #cce5ff;
+  --color-secondary-fixed-dim: #93ccff;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #00476e;
+  --color-on-secondary-fixed: #001d31;
+  --color-on-secondary-fixed-variant: #004b73;
+
+  --color-tertiary: #825100;
+  --color-tertiary-container: #a36700;
+  --color-tertiary-fixed: #ffddb8;
+  --color-tertiary-fixed-dim: #ffb95f;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #fffbff;
+  --color-on-tertiary-fixed: #2a1700;
+  --color-on-tertiary-fixed-variant: #653e00;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+  --color-on-error: #ffffff;
+  --color-on-error-container: #93000a;
+
+  --color-outline: #6d7a77;
+  --color-outline-variant: #bcc9c6;
+
+  --color-inverse-surface: #283044;
+  --color-inverse-on-surface: #eef0ff;
+
+  /* Typography families */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-headline-xl: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-headline-xl-mobile: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-headline-lg: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-headline-lg-mobile: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-headline-md: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-headline-sm: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-label-lg: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-label-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-label-code: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-body-lg: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body-md: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-badge-sm: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Type scale (size / line-height / tracking / weight) */
+  --text-headline-xl: 36px;
+  --text-headline-xl--line-height: 44px;
+  --text-headline-xl--letter-spacing: -0.02em;
+  --text-headline-xl--font-weight: 700;
+  --text-headline-xl-mobile: 28px;
+  --text-headline-xl-mobile--line-height: 36px;
+  --text-headline-xl-mobile--letter-spacing: -0.01em;
+  --text-headline-xl-mobile--font-weight: 700;
+  --text-headline-lg: 28px;
+  --text-headline-lg--line-height: 36px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-lg-mobile: 24px;
+  --text-headline-lg-mobile--line-height: 32px;
+  --text-headline-lg-mobile--letter-spacing: -0.01em;
+  --text-headline-lg-mobile--font-weight: 700;
+  --text-headline-md: 22px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-headline-md--font-weight: 600;
+  --text-headline-sm: 18px;
+  --text-headline-sm--line-height: 24px;
+  --text-headline-sm--font-weight: 600;
+  --text-label-lg: 14px;
+  --text-label-lg--line-height: 20px;
+  --text-label-lg--font-weight: 600;
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--font-weight: 500;
+  --text-label-code: 12px;
+  --text-label-code--line-height: 16px;
+  --text-label-code--letter-spacing: 0.02em;
+  --text-label-code--font-weight: 500;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+  --text-body-sm: 12px;
+  --text-body-sm--line-height: 16px;
+  --text-body-sm--font-weight: 400;
+  --text-badge-sm: 11px;
+  --text-badge-sm--line-height: 14px;
+  --text-badge-sm--letter-spacing: 0.04em;
+  --text-badge-sm--font-weight: 600;
+
+  /* Radii (matches Stitch: DEFAULT .25rem, lg .5rem, xl .75rem) */
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+body {
+  background: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-sans);
+}
+
+/* Stitch hides scrollbars inside rendered frames */
+::-webkit-scrollbar {
+  display: none;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  line-height: 1;
+  user-select: none;
+}

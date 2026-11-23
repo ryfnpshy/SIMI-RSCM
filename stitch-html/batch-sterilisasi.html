@@ -1,0 +1,863 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-high":"#e2e7ff","background":"#faf8ff","tertiary-container":"#a36700","on-tertiary-fixed":"#2a1700","on-surface":"#131b2e","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#004b73","surface-variant":"#dae2fd","on-primary-fixed-variant":"#005049","surface-dim":"#d2d9f4","secondary-fixed":"#cce5ff","outline":"#6d7a77","tertiary-fixed":"#ffddb8","inverse-on-surface":"#eef0ff","error-container":"#ffdad6","primary-fixed-dim":"#6bd8cb","on-primary":"#ffffff","tertiary":"#825100","inverse-surface":"#283044","primary-fixed":"#89f5e7","surface":"#faf8ff","error":"#ba1a1a","inverse-primary":"#6bd8cb","on-primary-container":"#f4fffc","surface-bright":"#faf8ff","on-surface-variant":"#3d4947","tertiary-fixed-dim":"#ffb95f","on-secondary-fixed":"#001d31","secondary":"#006398","surface-container":"#eaedff","secondary-container":"#5bb8fe","surface-tint":"#006a61","primary":"#00685f","on-tertiary-fixed-variant":"#653e00","on-secondary-container":"#00476e","on-tertiary":"#ffffff","primary-container":"#008378","on-primary-fixed":"#00201d","surface-container-low":"#f2f3ff","surface-container-highest":"#dae2fd","outline-variant":"#bcc9c6","on-error-container":"#93000a","on-error":"#ffffff","secondary-fixed-dim":"#93ccff","on-secondary":"#ffffff","on-tertiary-container":"#fffbff","on-background":"#131b2e"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","space-xl":"2rem","space-md":"1rem","margin-mobile":"1rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","margin":"2rem","space-lg":"1.5rem","gutter":"1.5rem"},"fontFamily":{"body-sm":["Inter"],"headline-xl":["Manrope"],"headline-sm":["Manrope"],"headline-lg":["Manrope"],"badge-sm":["Inter"],"body-md":["Inter"],"headline-md":["Manrope"],"body-lg":["Inter"],"label-md":["Inter"],"label-lg":["Inter"],"headline-lg-mobile":["Manrope"],"headline-xl-mobile":["Manrope"],"label-code":["JetBrains Mono"]},"fontSize":{"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"badge-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-code":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col h-full"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-lowest"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DSAZshwktY31BCMjA_KXD9LIQy4QTFbn5FAKVY0N_eGWrPjrl9gyG43yuBVt65-xwR67O80pj4egbXyVjdh8rSL1yM1DQLhS1SO6bs5_cmu-q7hEBom7nqX2pe_i9JFaECrhSqOMc73RV9p-zkBcaQBYKyflhiVcGBZlkocsye5mrlfX4Gvut1r_0S7X4Wts_laJQ_6_OSFSlVIzUX7ZMnjdUHpkS54zkJAjk6g5EaxnuSmw8oYf8Q" alt="Logo Kemenkes RS Cipto Mangunkusumo" class="h-8 object-contain shrink-0"><div class="flex flex-col"><span class="font-label-lg text-label-lg text-primary leading-tight tracking-tight">SIM-INSTALMED</span><span class="font-badge-sm text-badge-sm text-on-surface-variant uppercase tracking-wider">RSCM • Kemenkes RI</span></div></div><div class="px-space-md py-space-sm"><div class="px-space-sm py-space-xs font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">Menu Navigasi</div></div><nav class="flex-1 px-space-md space-y-1 overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="data-alat" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="">Data Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="status-alat" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="">Status Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="alat-masuk" href="#"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="">Alat Masuk</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="alat-keluar-distribusi" href="#"><span class="material-symbols-outlined text-[20px]">outbox</span><span class="">Alat Keluar / Distribusi</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="riwayat-pergerakan" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="">Riwayat Pergerakan</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="konfirmasi-penerimaan" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span class="">Konfirmasi Penerimaan</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-all rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="daftar-batch-sterilisasi" href="#"><span class="material-symbols-outlined text-[20px]">sanitizer</span><span class="">Sterilisasi CSSD</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="daftar-laporan" href="#"><span class="material-symbols-outlined text-[20px]">assessment</span><span class="">Laporan</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface font-label-lg text-label-lg transition-all" data-path="manajemen-user" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="">Manajemen User</span></a></nav><div class="p-space-md bg-surface-container-low"><div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-medium">Status Sistem</span></div><span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed uppercase tracking-wide font-semibold">ONLINE</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md overflow-hidden"><div class="flex items-center gap-space-sm min-w-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DSAZshwktY31BCMjA_KXD9LIQy4QTFbn5FAKVY0N_eGWrPjrl9gyG43yuBVt65-xwR67O80pj4egbXyVjdh8rSL1yM1DQLhS1SO6bs5_cmu-q7hEBom7nqX2pe_i9JFaECrhSqOMc73RV9p-zkBcaQBYKyflhiVcGBZlkocsye5mrlfX4Gvut1r_0S7X4Wts_laJQ_6_OSFSlVIzUX7ZMnjdUHpkS54zkJAjk6g5EaxnuSmw8oYf8Q" alt="Logo Kemenkes RS Cipto Mangunkusumo" class="h-8 object-contain shrink-0"><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate leading-tight">RS Cipto Mangunkusumo (Kemenkes RI) - Sistem Informasi Manajemen Inventori &amp; Sterilisasi Alat Medis</h1></div></div><div class="flex items-center gap-space-lg shrink-0"><button aria-label="Notifikasi Operasional" class="relative p-space-xs text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors rounded-full" type="button"><span class="material-symbols-outlined text-[24px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-md bg-surface-container-low/50 py-1.5 px-space-md rounded-full"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UJmadc9VtSSlBhDNtMrgH_le0vYE_6emp_SKjUAz47GzUapoKC1eA75IeTD2z3Ved2dQATmXP1Pr2DzAYTk3aYEIeWxhbBDIMQZjnFDHB3IE_R2OuZRltgk2yNe8TDgP-7VIWWXrQS2Ep_mUJPvS-nXh8xLVp5_PBG28C4Xiqcw-lM0yF5nsqYwg7QUeCkEu8RBiXMG3WNiOAMCmDXcTboXH11QzlkkN0Zte_yHkbprGKQdfOZTGocQgU"><div class="flex flex-col text-left"><span class="font-label-lg text-label-lg text-on-surface font-semibold leading-tight">Ratna Sari, S.Kep</span><span class="font-badge-sm text-badge-sm text-on-surface-variant">Petugas / Admin Inventori</span></div></div><button class="flex items-center gap-1.5 px-space-md py-space-sm bg-error-container text-on-error-container hover:bg-error hover:text-on-error rounded-lg font-label-md text-label-md transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Logout</span></button></div></header><main class="relative pt-16 bg-surface min-h-screen w-full px-margin"><div class="flex flex-col w-full">
+<!-- Ensure sidebar active item highlight -->
+<script>
+    (function highlightActiveMenu() {
+      const activeLink = document.querySelector('nav a[data-path="daftar-batch-sterilisasi"]');
+      if (activeLink) {
+        document.querySelectorAll('nav a').forEach(el => el.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm'));
+        activeLink.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+      }
+    })();
+  </script>
+<!-- Page Header & Action Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md py-space-lg">
+<div class="flex flex-col min-w-0">
+<nav class="flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant mb-1">
+<a class="hover:text-primary transition-colors" href="#">Dashboard</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Sterilisasi CSSD</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Sterilisasi CSSD</h2>
+<span class="bg-primary-fixed text-on-primary-fixed font-badge-sm text-badge-sm px-2.5 py-0.5 rounded-full uppercase tracking-wider font-semibold">Live Monitor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Pemantauan siklus sterilisasi instrumen bedah dan disinfeksi sentral RSCM Kemenkes RI</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">qr_code_scanner</span>
+<span class="">Scan Barcode [F2]</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-lg py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg transition-all shadow-sm hover:shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="">Buat Batch Baru</span>
+</button>
+</div>
+</div>
+<!-- Summary Cards (4-Column Grid) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-lg">
+<!-- Card 1: Batch Aktif -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-110 transition-transform pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium block">Batch Aktif</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">6</span>
+<span class="font-badge-sm text-badge-sm text-primary font-semibold flex items-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping mr-1"></span>Proses
+            </span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-primary-fixed/40 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">autorenew</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 pt-2 bg-surface-container-low/40 rounded px-2 py-1">
+        Sedang berjalan di unit CSSD
+      </p>
+</div>
+<!-- Card 2: Menunggu Sterilisasi -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary-container/10 rounded-full group-hover:scale-110 transition-transform pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium block">Menunggu Sterilisasi</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-secondary font-bold">2</span>
+<span class="font-badge-sm text-badge-sm text-secondary font-semibold">Siap Autoclave</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">inventory_2</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 pt-2 bg-surface-container-low/40 rounded px-2 py-1">
+        Tahap packing selesai
+      </p>
+</div>
+<!-- Card 3: Selesai Hari Ini -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary-fixed/20 rounded-full group-hover:scale-110 transition-transform pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium block">Selesai Hari Ini</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-primary font-bold">4</span>
+<span class="font-badge-sm text-badge-sm text-primary font-semibold flex items-center">
+<span class="material-symbols-outlined text-[14px] mr-0.5">verified</span>QC Lulus
+            </span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-surface-container-high flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">task_alt</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 pt-2 bg-surface-container-low/40 rounded px-2 py-1">
+        Siap didistribusikan ke unit
+      </p>
+</div>
+<!-- Card 4: Alat Dalam Proses -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary-fixed/30 rounded-full group-hover:scale-110 transition-transform pointer-events-none"></div>
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium block">Alat Dalam Proses</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-xl text-headline-xl text-tertiary font-bold">87</span>
+<span class="font-badge-sm text-badge-sm text-tertiary font-semibold">Instrumen</span>
+</div>
+</div>
+<div class="w-11 h-11 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[24px]">medical_services</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-3 pt-2 bg-surface-container-low/40 rounded px-2 py-1">
+        Total instrumen klinis
+      </p>
+</div>
+</div>
+<!-- CSSD Visual Pipeline Indicator Banner -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md mb-space-lg shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">timeline</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Alur Standar Sterilisasi CSSD (ISO 17665-1 / Permenkes)</span>
+</div>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant uppercase tracking-wider">6 Tahapan Siklus Lengkap</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 pt-1">
+<div class="flex items-center gap-2 p-2 rounded-lg bg-error-container/30">
+<span class="w-6 h-6 rounded-full bg-error-container text-on-error-container font-label-md text-label-md flex items-center justify-center font-bold">1</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-error font-semibold truncate leading-tight">Penerimaan</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">Kotor / Sortir</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-tertiary-fixed/30">
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center justify-center font-bold">2</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-tertiary font-semibold truncate leading-tight">Cleaning</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">Ultrasonik/Manual</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-tertiary-container/15">
+<span class="w-6 h-6 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-md text-label-md flex items-center justify-center font-bold">3</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-tertiary-container font-semibold truncate leading-tight">Disinfection</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">HLD Enzimatis</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-secondary-fixed/40">
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md flex items-center justify-center font-bold">4</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-secondary font-semibold truncate leading-tight">Packing</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">Pouches / Linen</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-variant">
+<span class="w-6 h-6 rounded-full bg-primary-fixed-dim text-on-primary-fixed-variant font-label-md text-label-md flex items-center justify-center font-bold">5</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-primary font-semibold truncate leading-tight">Sterilization</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">Autoclave 134°C</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-2 rounded-lg bg-primary-fixed/30">
+<span class="w-6 h-6 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center justify-center font-bold">6</span>
+<div class="min-w-0">
+<p class="font-label-md text-label-md text-primary font-semibold truncate leading-tight">Distribusi</p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">QC Rilis &amp; Kirim</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter & Pencarian Batch -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg mb-space-lg shadow-sm">
+<div class="flex flex-col gap-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Search input with hotkey -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-11 pr-24 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="batchSearchInput" placeholder="Cari kode batch (misal: CSSD-20261105...)" type="text">
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 font-label-code text-label-code text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">
+<span class="">Ctrl</span><span class="">K</span>
+</div>
+</div>
+<!-- Filter Dropdowns -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Dropdown Tahap -->
+<div class="relative min-w-[170px]">
+<select class="w-full appearance-none pl-3.5 pr-9 py-2.5 bg-surface-container-low rounded-lg font-label-lg text-label-lg text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary cursor-pointer transition-all" id="filterTahap">
+<option value="ALL">Semua Tahap</option>
+<option value="Penerimaan Kotor">Penerimaan Kotor</option>
+<option value="Cleaning">Cleaning</option>
+<option value="Disinfection">Disinfection</option>
+<option value="Packing">Packing</option>
+<option value="Sterilization">Sterilization</option>
+<option value="Selesai / Distribusi">Selesai / Distribusi</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<!-- Dropdown Unit -->
+<div class="relative min-w-[190px]">
+<select class="w-full appearance-none pl-3.5 pr-9 py-2.5 bg-surface-container-low rounded-lg font-label-lg text-label-lg text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary cursor-pointer transition-all" id="filterUnit">
+<option value="ALL">Semua Unit</option>
+<option value="IBS (Kamar Operasi)">Instalasi Bedah Sentral (IBS)</option>
+<option value="IGD PONEK">IGD PONEK</option>
+<option value="ICU Sentral">ICU Sentral</option>
+<option value="Poliklinik Gigi">Poliklinik Gigi</option>
+<option value="Rawat Inap Lt. 3">Rawat Inap Lt. 3</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+</div>
+<button class="px-space-md py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1 transition-colors" id="resetFilterBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">refresh</span>
+<span class="">Reset</span>
+</button>
+</div>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-2 pt-1 overflow-x-auto text-nowrap">
+<span class="font-label-md text-label-md text-on-surface-variant font-medium flex items-center gap-1 shrink-0">
+<span class="material-symbols-outlined text-[16px] text-primary">filter_alt</span>
+          Filter Cepat:
+        </span>
+<button class="quick-pill active px-3 py-1 rounded-full font-label-md text-label-md bg-primary-container text-on-primary-container transition-all" data-filter="hari-ini" type="button">
+          Hari Ini (8)
+        </button>
+<button class="quick-pill px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-filter="autoclave-a" type="button">
+          Autoclave Mesin A
+        </button>
+<button class="quick-pill px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center gap-1" data-filter="prioritas-cito" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          Prioritas Cito
+        </button>
+<button class="quick-pill px-3 py-1 rounded-full font-label-md text-label-md bg-surface-container text-on-surface hover:bg-surface-container-high transition-all" data-filter="kamar-operasi" type="button">
+          IBS Kamar Operasi
+        </button>
+</div>
+</div>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden mb-space-xl">
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">table_chart</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Tabel Daftar Batch Sterilisasi</h3>
+<span class="font-badge-sm text-badge-sm bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded-full font-semibold" id="batchCountBadge">6 Batch Ditampilkan</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded hover:bg-surface-container-high transition-colors" title="Export Excel" type="button">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+</button>
+<button class="text-on-surface-variant hover:text-on-surface p-1.5 rounded hover:bg-surface-container-high transition-colors" title="Print Log Sheet" type="button">
+<span class="material-symbols-outlined text-[20px]">print</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse" id="batchTable">
+<thead>
+<tr class="bg-surface-container-low/70 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">
+<th class="py-3.5 px-space-md">Kode Batch</th>
+<th class="py-3.5 px-space-md">Tanggal Mulai</th>
+<th class="py-3.5 px-space-md">Jumlah Alat</th>
+<th class="py-3.5 px-space-md">Tahap Saat Ini</th>
+<th class="py-3.5 px-space-md">Unit Asal</th>
+<th class="py-3.5 px-space-md">Penanggung Jawab</th>
+<th class="py-3.5 px-space-md">Progress</th>
+<th class="py-3.5 px-space-md text-right">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-md text-body-md text-on-surface">
+<!-- Row 1: Sterilization (Purple) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261105-001" data-tahap="Sterilization" data-unit="IBS (Kamar Operasi)">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261105-001</span>
+<span class="font-badge-sm text-badge-sm px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-bold">CITO</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              05 Nov 2026, 08:15 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">24</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Purple badge for Sterilization -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-variant text-on-primary-fixed-variant font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+                Sterilization
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              IBS (Kamar Operasi)
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">person</span>
+<span class="">Dedi Prasetyo, A.Md.Kes</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-primary">5/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">83%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 83%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261105-001', 'Sterilization', 'IBS (Kamar Operasi)', 24, 'Dedi Prasetyo, A.Md.Kes')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+<!-- Row 2: Packing (Blue) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261105-002" data-tahap="Packing" data-unit="IGD PONEK">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261105-002</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              05 Nov 2026, 09:30 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">18</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Blue badge for Packing -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                Packing
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              IGD PONEK
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">person</span>
+<span class="">Siti Nurhaliza, S.Tr.Kes</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-secondary">4/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">66%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-2 rounded-full transition-all duration-500" style="width: 66%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-secondary hover:text-on-secondary text-secondary font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261105-002', 'Packing', 'IGD PONEK', 18, 'Siti Nurhaliza, S.Tr.Kes')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+<!-- Row 3: Disinfection (Amber) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261105-003" data-tahap="Disinfection" data-unit="ICU Sentral">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261105-003</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              05 Nov 2026, 10:00 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">12</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Amber badge for Disinfection -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                Disinfection
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              ICU Sentral
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">person</span>
+<span class="">Budi Santoso</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-tertiary">3/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">50%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary-container h-2 rounded-full transition-all duration-500" style="width: 50%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-tertiary hover:text-on-tertiary text-tertiary font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261105-003', 'Disinfection', 'ICU Sentral', 12, 'Budi Santoso')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+<!-- Row 4: Cleaning (Orange) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261105-004" data-tahap="Cleaning" data-unit="Poliklinik Gigi">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261105-004</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              05 Nov 2026, 10:45 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">15</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Orange badge for Cleaning -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed-dim text-on-tertiary-fixed font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span>
+                Cleaning
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              Poliklinik Gigi
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">person</span>
+<span class="">Dedi Prasetyo, A.Md.Kes</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-tertiary-container">2/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">33%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary-container h-2 rounded-full transition-all duration-500" style="width: 33%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-tertiary-container hover:text-on-tertiary text-tertiary-container font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261105-004', 'Cleaning', 'Poliklinik Gigi', 15, 'Dedi Prasetyo, A.Md.Kes')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+<!-- Row 5: Penerimaan Kotor (Red) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261105-005" data-tahap="Penerimaan Kotor" data-unit="Rawat Inap Lt. 3">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261105-005</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              05 Nov 2026, 11:20 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">8</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Red badge for Penerimaan Kotor -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                Penerimaan Kotor
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              Rawat Inap Lt. 3
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-error">person</span>
+<span class="">Siti Nurhaliza, S.Tr.Kes</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-error">1/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">16%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-error h-2 rounded-full transition-all duration-500" style="width: 16%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-error hover:text-on-error text-error font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261105-005', 'Penerimaan Kotor', 'Rawat Inap Lt. 3', 8, 'Siti Nurhaliza, S.Tr.Kes')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+<!-- Row 6: Selesai / Distribusi (Green) -->
+<tr class="hover:bg-surface-container-low transition-colors group" data-batch="CSSD-20261104-012" data-tahap="Selesai / Distribusi" data-unit="IBS (Kamar Operasi)">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">barcode</span>
+<span class="font-label-code text-label-code text-on-surface font-semibold tracking-wide">CSSD-20261104-012</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-on-surface-variant whitespace-nowrap">
+              04 Nov 2026, 16:00 WIB
+            </td>
+<td class="py-3.5 px-space-md">
+<span class="font-semibold text-on-surface">30</span> <span class="text-on-surface-variant text-body-sm">Unit</span>
+</td>
+<td class="py-3.5 px-space-md">
+<!-- Green badge for Selesai / Distribusi -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                Selesai / Distribusi
+              </span>
+</td>
+<td class="py-3.5 px-space-md font-medium text-on-surface">
+              IBS (Kamar Operasi)
+            </td>
+<td class="py-3.5 px-space-md text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">person</span>
+<span class="">Agus Hendra</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md min-w-[160px]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<span class="font-semibold text-primary">6/6 tahap</span>
+<span class="font-label-code text-label-code text-on-surface-variant">100%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-2 rounded-full transition-all duration-500" style="width: 100%"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-right whitespace-nowrap">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-primary font-label-md text-label-md transition-all shadow-xs" onclick="openBatchDetail('CSSD-20261104-012', 'Selesai / Distribusi', 'IBS (Kamar Operasi)', 30, 'Agus Hendra')" type="button">
+                Detail
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Pagination -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest border-t-0 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+        Menampilkan <span class="font-semibold text-on-surface">1-6</span> dari <span class="font-semibold text-on-surface">6</span> batch aktif
+      </span>
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-30" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">first_page</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-30" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold" type="button">1</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-30" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="p-1.5 rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-30" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">last_page</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Operational Audit & CSSD Autoclave Status Drawer / Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter mb-space-xl">
+<!-- Machine Status Monitor -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">heat_pump</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Status Mesin Autoclave</h4>
+</div>
+<span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed uppercase font-semibold">Live Telemetri</span>
+</div>
+<div class="space-y-3">
+<!-- Chamber 1 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Autoclave STEAM-01 (Getinge)</span>
+<span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-bold">134.2°C • 2.1 bar</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="">Siklus Porous Load #4 — Sterilisasi</span>
+<span class="font-semibold text-primary">Sisa 18 Menit</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1.5 mt-2">
+<div class="bg-primary h-1.5 rounded-full" style="width: 72%"></div>
+</div>
+</div>
+<!-- Chamber 2 -->
+<div class="p-space-sm bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface">Autoclave PLASMA-02 (Sterrad)</span>
+<span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">STANDBY</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span class="">Instrumen Laparoskopi / Suhu Rendah</span>
+<span class="font-medium text-secondary">Siap Pemuatan</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Biological Indicator QC Testing -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">biotech</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Indikator Biologi (BI Test)</h4>
+</div>
+<span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed uppercase font-semibold">24 Jam</span>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px] shrink-0 mt-0.5">check_circle</span>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg font-semibold text-on-surface">Geobacillus stearothermophilus</p>
+<p class="text-on-surface-variant">Lot #B1104-A • Inkubasi 3 Jam (Attest 3M) — <strong class="text-primary">NEGATIF (LULUS QC)</strong></p>
+<span class="font-badge-sm text-badge-sm text-on-surface-variant">Divalidasi: Ns. Farida, S.Kep (Pukul 07:00)</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-[24px] shrink-0 mt-0.5">hourglass_top</span>
+<div class="min-w-0">
+<p class="font-label-lg text-label-lg font-semibold text-on-surface">Bowie-Dick Air Removal Test</p>
+<p class="text-on-surface-variant">Sheet Kimia Kelas 2 — Perubahan warna seragam terverifikasi pada Steam Chamber 01.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick SOP & Safety Standards -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[22px]">gavel</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Standar Kepatuhan Kemenkes</h4>
+</div>
+</div>
+<ul class="space-y-2 text-body-sm text-on-surface-variant">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified_user</span>
+<span class="">Semua kemasan wajib mencantumkan label kedaluwarsa maksimal 30 hari (pouches ganda).</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified_user</span>
+<span class="">Instrumen kotor wajib melewati perendaman larutan enzimatik selambatnya 15 menit paska operasi.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">verified_user</span>
+<span class="">Dokumentasi Bowie-Dick dan grafik fisik autoclave wajib disimpan minimal 5 tahun.</span>
+</li>
+</ul>
+</div>
+<div class="mt-4 pt-3 bg-surface-container-low rounded-lg px-3 py-2 flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Petugas Supervisor Jaga:</span>
+<span class="font-label-md text-label-md text-primary font-bold">Ns. Tri Handayani, S.Kep, M.Kep</span>
+</div>
+</div>
+</div>
+<!-- Detail Modal Overlay (Hidden by default, triggered by "Detail" button) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/50 backdrop-blur-sm hidden flex items-center justify-center p-4" id="batchDetailModal">
+<div class="bg-surface-container-lowest rounded-2xl max-w-2xl w-full p-space-lg shadow-2xl relative">
+<div class="flex items-start justify-between pb-space-md">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-code text-label-code px-2 py-0.5 rounded bg-surface-container text-primary font-bold" id="modalBatchCode">CSSD-20261105-001</span>
+<span class="font-badge-sm text-badge-sm px-2.5 py-0.5 rounded-full font-semibold" id="modalTahapBadge">Sterilization</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mt-1">Detail Siklus Sterilisasi Batch</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">RSCM Instalasi Sterilisasi Sentral (CSSD)</p>
+</div>
+<button class="p-1 rounded-full hover:bg-surface-container text-on-surface-variant" onclick="closeBatchDetail()" type="button">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+</div>
+<div class="space-y-4 py-2">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-3 bg-surface-container-low rounded-lg text-body-sm">
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">Unit Pengirim</span>
+<strong class="text-on-surface" id="modalUnit">IBS (Kamar Operasi)</strong>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">Jumlah Alat</span>
+<strong class="text-on-surface" id="modalJumlah">24 Unit Instrumen</strong>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface-variant block">Penanggung Jawab</span>
+<strong class="text-on-surface" id="modalPJ">Dedi Prasetyo, A.Md.Kes</strong>
+</div>
+</div>
+<div class="space-y-2">
+<span class="font-label-lg text-label-lg font-semibold text-on-surface block">Rincian Set Alat Klinis dalam Batch:</span>
+<div class="bg-surface-container-lowest rounded-lg divide-y divide-surface-container text-body-sm max-h-48 overflow-y-auto pr-1">
+<div class="p-2 flex items-center justify-between">
+<span class="font-medium text-on-surface">Set Bedah Mayor Laparatomi No. 04</span>
+<span class="font-badge-sm text-badge-sm text-primary bg-primary-fixed px-2 py-0.5 rounded font-semibold">12 Pcs</span>
+</div>
+<div class="p-2 flex items-center justify-between">
+<span class="font-medium text-on-surface">Set Klem Hemostatik Kelly Curva (14cm)</span>
+<span class="font-badge-sm text-badge-sm text-primary bg-primary-fixed px-2 py-0.5 rounded font-semibold">6 Pcs</span>
+</div>
+<div class="p-2 flex items-center justify-between">
+<span class="font-medium text-on-surface">Bakis Stainless Steel Tray Uk. 30x20</span>
+<span class="font-badge-sm text-badge-sm text-primary bg-primary-fixed px-2 py-0.5 rounded font-semibold">2 Pcs</span>
+</div>
+<div class="p-2 flex items-center justify-between">
+<span class="font-medium text-on-surface">Pinset Anatomis &amp; Cirurgis Fine-Tip</span>
+<span class="font-badge-sm text-badge-sm text-primary bg-primary-fixed px-2 py-0.5 rounded font-semibold">4 Pcs</span>
+</div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">verified</span>
+<div class="text-body-sm">
+<span class="font-semibold text-on-surface block">Indikator Kimia Kelas 5 Integrator: OK</span>
+<span class="text-on-surface-variant">Warna telah bergeser penuh ke jendela "ACCEPT" pada suhu 134°C selama 7 menit.</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-md border-t-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" onclick="closeBatchDetail()" type="button">
+          Tutup
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span class="">Cetak Label Steril (Barcode)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Filter & Modal Logic -->
+<script>
+    function filterTable() {
+      const searchVal = document.getElementById('batchSearchInput').value.toLowerCase();
+      const tahapVal = document.getElementById('filterTahap').value;
+      const unitVal = document.getElementById('filterUnit').value;
+      const rows = document.querySelectorAll('#batchTable tbody tr');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const batchCode = row.getAttribute('data-batch').toLowerCase();
+        const tahap = row.getAttribute('data-tahap');
+        const unit = row.getAttribute('data-unit');
+
+        const matchSearch = batchCode.includes(searchVal);
+        const matchTahap = (tahapVal === 'ALL' || tahap === tahapVal);
+        const matchUnit = (unitVal === 'ALL' || unit === unitVal);
+
+        if (matchSearch && matchTahap && matchUnit) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      const countBadge = document.getElementById('batchCountBadge');
+      if (countBadge) {
+        countBadge.textContent = visibleCount + ' Batch Ditampilkan';
+      }
+    }
+
+    document.getElementById('batchSearchInput')?.addEventListener('input', filterTable);
+    document.getElementById('filterTahap')?.addEventListener('change', filterTable);
+    document.getElementById('filterUnit')?.addEventListener('change', filterTable);
+
+    document.getElementById('resetFilterBtn')?.addEventListener('click', () => {
+      document.getElementById('batchSearchInput').value = '';
+      document.getElementById('filterTahap').value = 'ALL';
+      document.getElementById('filterUnit').value = 'ALL';
+      document.querySelectorAll('.quick-pill').forEach(p => p.classList.remove('active', 'bg-primary-container', 'text-on-primary-container'));
+      filterTable();
+    });
+
+    // Quick Pill Filters
+    document.querySelectorAll('.quick-pill').forEach(pill => {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.quick-pill').forEach(p => {
+          p.classList.remove('active', 'bg-primary-container', 'text-on-primary-container');
+          p.classList.add('bg-surface-container', 'text-on-surface');
+        });
+        this.classList.add('active', 'bg-primary-container', 'text-on-primary-container');
+        this.classList.remove('bg-surface-container', 'text-on-surface');
+
+        const filterType = this.getAttribute('data-filter');
+        if (filterType === 'kamar-operasi') {
+          document.getElementById('filterUnit').value = 'IBS (Kamar Operasi)';
+        } else if (filterType === 'prioritas-cito') {
+          document.getElementById('batchSearchInput').value = '001';
+        } else {
+          document.getElementById('filterUnit').value = 'ALL';
+          document.getElementById('batchSearchInput').value = '';
+        }
+        filterTable();
+      });
+    });
+
+    // Detail Modal Functionality
+    function openBatchDetail(code, tahap, unit, jumlah, pj) {
+      const modal = document.getElementById('batchDetailModal');
+      document.getElementById('modalBatchCode').textContent = code;
+      document.getElementById('modalTahapBadge').textContent = tahap;
+      document.getElementById('modalUnit').textContent = unit;
+      document.getElementById('modalJumlah').textContent = jumlah + ' Unit Instrumen';
+      document.getElementById('modalPJ').textContent = pj;
+
+      const badge = document.getElementById('modalTahapBadge');
+      badge.className = 'font-badge-sm text-badge-sm px-2.5 py-0.5 rounded-full font-semibold ';
+      if (tahap === 'Sterilization') badge.className += 'bg-surface-variant text-on-primary-fixed-variant';
+      else if (tahap === 'Packing') badge.className += 'bg-secondary-fixed text-on-secondary-fixed';
+      else if (tahap === 'Disinfection') badge.className += 'bg-tertiary-fixed text-on-tertiary-fixed-variant';
+      else if (tahap === 'Cleaning') badge.className += 'bg-tertiary-fixed-dim text-on-tertiary-fixed';
+      else if (tahap === 'Penerimaan Kotor') badge.className += 'bg-error-container text-on-error-container';
+      else badge.className += 'bg-primary-fixed text-on-primary-fixed';
+
+      modal.classList.remove('hidden');
+    }
+
+    function closeBatchDetail() {
+      document.getElementById('batchDetailModal').classList.add('hidden');
+    }
+
+    window.openBatchDetail = openBatchDetail;
+    window.closeBatchDetail = closeBatchDetail;
+
+    // Keyboard Hotkey (Ctrl + K or F2)
+    window.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey && e.key === 'k') || e.key === 'F2') {
+        e.preventDefault();
+        const searchInput = document.getElementById('batchSearchInput');
+        if (searchInput) {
+          searchInput.focus();
+          searchInput.select();
+        }
+      }
+      if (e.key === 'Escape') {
+        closeBatchDetail();
+      }
+    });
+  </script>
+</div></main></div>
+
+</body></html>

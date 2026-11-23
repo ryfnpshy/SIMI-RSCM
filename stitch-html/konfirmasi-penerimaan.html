@@ -1,0 +1,425 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#005049","inverse-on-surface":"#eef0ff","surface-dim":"#d2d9f4","on-error":"#ffffff","surface-container-high":"#e2e7ff","tertiary-fixed":"#ffddb8","on-tertiary-fixed":"#2a1700","background":"#faf8ff","primary-fixed-dim":"#6bd8cb","surface-container":"#eaedff","on-primary-container":"#f4fffc","primary-container":"#008378","on-primary":"#ffffff","secondary-container":"#5bb8fe","on-error-container":"#93000a","tertiary-fixed-dim":"#ffb95f","tertiary-container":"#a36700","on-secondary":"#ffffff","tertiary":"#825100","secondary-fixed-dim":"#93ccff","secondary":"#006398","primary":"#00685f","error":"#ba1a1a","on-tertiary-fixed-variant":"#653e00","on-secondary-fixed":"#001d31","on-surface":"#131b2e","surface-container-low":"#f2f3ff","surface-container-highest":"#dae2fd","on-tertiary":"#ffffff","secondary-fixed":"#cce5ff","surface-bright":"#faf8ff","outline":"#6d7a77","inverse-primary":"#6bd8cb","on-primary-fixed":"#00201d","primary-fixed":"#89f5e7","on-tertiary-container":"#fffbff","surface-variant":"#dae2fd","surface":"#faf8ff","surface-tint":"#006a61","outline-variant":"#bcc9c6","on-secondary-container":"#00476e","on-secondary-fixed-variant":"#004b73","on-surface-variant":"#3d4947","inverse-surface":"#283044","surface-container-lowest":"#ffffff","on-background":"#131b2e","error-container":"#ffdad6"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"margin":"2rem","space-sm":"0.5rem","margin-mobile":"1rem","gutter":"1.5rem","space-lg":"1.5rem","space-md":"1rem","gutter-mobile":"0.75rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"body-md":["Inter"],"label-md":["Inter"],"headline-lg-mobile":["Manrope"],"label-lg":["Inter"],"headline-xl":["Manrope"],"headline-md":["Manrope"],"badge-sm":["Inter"],"headline-lg":["Manrope"],"headline-xl-mobile":["Manrope"],"headline-sm":["Manrope"],"body-lg":["Inter"],"label-code":["JetBrains Mono"],"body-sm":["Inter"]},fontSize:{"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"label-md":["12px",{lineHeight:"16px",fontWeight:"500"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"700"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-xl":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"badge-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-code":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"500"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between py-space-md"><div class="flex flex-col"><div class="px-space-lg py-space-sm mb-space-sm flex items-center gap-space-sm"><img alt="Kemenkes RSCM" class="h-9 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMg7wANIJ5DNCiGQ-iiuup0lCRQ-tsakxKjhUIxzVWRoE7cKj5hYBuw3MbY9q4_9SbRi-KhsBiLkKCb2BVw_oantHCwX4DZvlJ7_AO1SGBg2Fskzx8NFuFqLign0BGHlTbwq0HVRB9QPCm19cI-QMOi0IZkNNPJI2ecPfCw5q985s5VtlWUYQqQS2c8rpQigX6KISmZYegPUee7ZrTXGsT-wTRHGXrvvmvbqFksOI4bGUg9Z7Lse_fA"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm font-bold text-on-surface tracking-tight leading-none">SIM Inventori</span><span class="font-label-md text-label-md text-primary font-semibold mt-1">RSCM • Kemenkes RI</span></div></div><div class="px-space-md mb-space-xs"><div class="px-space-sm py-1 font-label-md text-label-md uppercase tracking-wider text-outline font-semibold">Menu Navigasi</div></div><nav class="flex flex-col gap-1 px-space-md overflow-y-auto max-h-[calc(100vh-160px)]" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">dashboard</span><span class="">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="data-alat" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="">Data Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="status-alat" href="#"><span class="material-symbols-outlined text-[20px]">rule</span><span class="">Status Alat</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="alat-masuk" href="#"><span class="material-symbols-outlined text-[20px]">move_to_inbox</span><span class="">Alat Masuk</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="alat-keluar-distribusi" href="#"><span class="material-symbols-outlined text-[20px]">outbox</span><span class="">Alat Keluar / Distribusi</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="riwayat-pergerakan" href="#"><span class="material-symbols-outlined text-[20px]">history</span><span class="">Riwayat Pergerakan</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2.5 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]" data-path="konfirmasi-penerimaan" href="#"><span class="material-symbols-outlined text-[20px]">verified</span><span class="">Konfirmasi Penerimaan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="sterilisasi-cssd" href="#"><span class="material-symbols-outlined text-[20px]">sanitizer</span><span class="">Sterilisasi CSSD</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="laporan" href="#"><span class="material-symbols-outlined text-[20px]">description</span><span class="">Laporan</span></a><a class="flex items-center gap-space-sm px-space-md py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="manajemen-user" href="#"><span class="material-symbols-outlined text-[20px]">manage_accounts</span><span class="">Manajemen User</span></a></nav></div><div class="px-space-md pt-space-xs"><div class="px-space-md py-space-sm rounded-lg bg-surface-container flex items-center justify-between text-on-surface-variant"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px] text-primary">health_and_safety</span><span class="font-label-md text-label-md font-medium text-on-surface">Status Sistem</span></div><span class="font-badge-sm text-badge-sm px-2 py-0.5 rounded-full bg-surface-container-lowest text-primary font-bold shadow-[0_1px_2px_rgba(0,0,0,0.04)]">ONLINE</span></div></div></aside><div class="pl-72 flex flex-col min-h-screen"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md min-w-0 pr-space-md"><div class="flex items-center shrink-0"><img alt="Kemenkes RS Cipto Mangunkusumo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNMg7wANIJ5DNCiGQ-iiuup0lCRQ-tsakxKjhUIxzVWRoE7cKj5hYBuw3MbY9q4_9SbRi-KhsBiLkKCb2BVw_oantHCwX4DZvlJ7_AO1SGBg2Fskzx8NFuFqLign0BGHlTbwq0HVRB9QPCm19cI-QMOi0IZkNNPJI2ecPfCw5q985s5VtlWUYQqQS2c8rpQigX6KISmZYegPUee7ZrTXGsT-wTRHGXrvvmvbqFksOI4bGUg9Z7Lse_fA"></div><div class="flex flex-col truncate"><span class="font-label-lg text-label-lg font-bold text-on-surface tracking-tight truncate">RS Cipto Mangunkusumo (Kemenkes RI)</span><span class="font-label-md text-label-md text-outline truncate">Sistem Informasi Manajemen Inventori &amp; Sterilisasi Alat Medis</span></div></div><div class="flex items-center gap-space-md shrink-0"><button aria-label="Notifikasi" class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="h-6 w-px bg-surface-container"></div><div class="flex items-center gap-space-sm"><div class="flex flex-col text-right"><span class="font-label-lg text-label-lg font-semibold text-on-surface leading-tight">Ratna Sari, S.Kep</span><span class="font-label-md text-label-md text-primary font-medium">Petugas / Admin Inventori</span></div></div><div class="h-6 w-px bg-surface-container"></div><a class="flex items-center gap-1.5 px-space-md py-1.5 rounded-lg bg-surface-container text-error hover:bg-error-container hover:text-on-error-container transition-colors font-label-lg text-label-lg font-semibold" data-path="login" href="#"><span class="material-symbols-outlined text-[18px]">logout</span><span class="">Logout</span></a></div></header><main class="w-full pt-16 bg-surface px-space-lg py-space-lg flex-1"><div class="flex flex-col w-full gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-outline font-label-md text-label-md">
+<span class="">Dashboard</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Konfirmasi Penerimaan</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Konfirmasi Penerimaan Alat</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-badge-sm text-badge-sm uppercase">
+<span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+          3 Menunggu Konfirmasi di Unit Anda
+        </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<div class="flex items-center gap-2 px-3.5 py-2 rounded-lg bg-surface-container text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">local_hospital</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-outline leading-none">Unit Bertugas</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5">Instalasi Bedah Sentral (IBS / OK)</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-space-lg items-start">
+<section class="col-span-12 xl:col-span-5 flex flex-col gap-space-md">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">inbox</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Daftar Distribusi Masuk</h2>
+</div>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-surface-container text-outline font-semibold">3 Muatan</span>
+</div>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="Cari barcode / nama set / kurir..." type="text">
+</div>
+<div class="flex flex-col gap-space-sm max-h-[calc(100vh-270px)] overflow-y-auto pr-1" id="distribution-list">
+<article class="cursor-pointer rounded-xl p-4 transition-all duration-150 relative bg-surface-container-low shadow-[0_1px_4px_rgba(0,104,95,0.12)]" data-item-id="ALT-BDH-004" onclick="selectDistributionItem(this, 'ALT-BDH-004')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-label-code text-primary font-bold">ALT-BDH-004</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-bold leading-snug mt-0.5 truncate">Set Bedah Mayor Laparatomi</h3>
+</div>
+<span class="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-badge-sm text-badge-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Menunggu
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container/50 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">warehouse</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Asal</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Gudang Inventori Sentral</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 justify-end">
+<span class="material-symbols-outlined text-primary text-[16px]">inventory_2</span>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Jumlah</span>
+<span class="font-label-lg text-label-lg text-primary font-bold leading-none">2 Unit</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 text-outline font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span class="truncate max-w-[140px]">Agus Supriyadi</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span class="">Hari ini, 09:38 WIB</span>
+</div>
+</div>
+<div class="mt-2.5 flex items-center justify-between pt-2">
+<span class="inline-flex items-center gap-1 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[18px]">radio_button_checked</span>
+                Aktif Dipilih
+              </span>
+<span class="font-label-code text-[11px] text-outline">BATCH #DIS-20250518-0938</span>
+</div>
+</article>
+<article class="cursor-pointer rounded-xl p-4 transition-all duration-150 relative bg-surface-container-lowest hover:bg-surface-container-low shadow-[0_1px_2px_rgba(15,23,42,0.04)]" data-item-id="ALT-BDH-045" onclick="selectDistributionItem(this, 'ALT-BDH-045')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-label-code text-outline font-medium">ALT-BDH-045</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold leading-snug mt-0.5 truncate">Gunting Jaringan Metzenbaum Curved 18cm</h3>
+</div>
+<span class="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-badge-sm text-badge-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Menunggu
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low/40 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">sanitizer</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Asal</span>
+<span class="font-label-md text-label-md text-on-surface truncate">CSSD Sterilisasi</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">inventory_2</span>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Jumlah</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold leading-none">5 Unit</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 text-outline font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span class="truncate max-w-[140px]">Dedi Prasetyo</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span class="">Hari ini, 08:15 WIB</span>
+</div>
+</div>
+</article>
+<article class="cursor-pointer rounded-xl p-4 transition-all duration-150 relative bg-surface-container-lowest hover:bg-surface-container-low shadow-[0_1px_2px_rgba(15,23,42,0.04)]" data-item-id="ALT-BDH-077" onclick="selectDistributionItem(this, 'ALT-BDH-077')">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<span class="font-label-code text-label-code text-outline font-medium">ALT-BDH-077</span>
+<h3 class="font-label-lg text-label-lg text-on-surface font-semibold leading-snug mt-0.5 truncate">Klem Hemostatik Pean Lurus 14cm</h3>
+</div>
+<span class="shrink-0 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-badge-sm text-badge-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                Menunggu
+              </span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-3 bg-surface-container-low/40 rounded-lg p-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">warehouse</span>
+<div class="flex flex-col">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Asal</span>
+<span class="font-label-md text-label-md text-on-surface truncate">Gudang Inventori Sentral</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 justify-end">
+<span class="material-symbols-outlined text-outline text-[16px]">inventory_2</span>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-outline uppercase font-semibold leading-none">Jumlah</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold leading-none">10 Unit</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-3 text-outline font-label-md text-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span class="truncate max-w-[140px]">Ratna Sari</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span class="">Kemarin, 16:45 WIB</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="col-span-12 xl:col-span-7 flex flex-col gap-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]">
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-md bg-surface-container-low/30 -mx-space-lg -mt-space-lg px-space-lg pt-space-lg rounded-t-xl">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<span class="font-label-code text-label-code uppercase tracking-wider text-outline font-bold">Dokumen Manifest Penerimaan</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="manifest-number">Detail Pengiriman #DIS-20250518-0938</h2>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+              Distribusi Terjadwal
+            </span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-md">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Nama Alat Medis</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold mt-1" id="detail-item-name">Set Bedah Mayor Laparatomi</span>
+<span class="font-label-code text-label-code text-primary mt-0.5" id="detail-item-code">ALT-BDH-004</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Jumlah Pengiriman</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-secondary font-bold leading-none" id="detail-qty-sent">2</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Unit Lengkap</span>
+</div>
+<span class="font-badge-sm text-[11px] text-outline mt-1">Sesuai Surat Jalan #SJ-884</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Unit Asal Pengirim</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-1" id="detail-origin">Gudang Inventori Sentral</span>
+<span class="font-label-md text-label-md text-outline mt-0.5">Lantai 1 - Gedung A</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Waktu Pengiriman</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-1" id="detail-timestamp">18 Mei 2025, 09:38 WIB</span>
+<span class="font-label-md text-label-md text-outline mt-0.5">Estimasi tempuh: 8 menit</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Petugas Pengirim</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-1" id="detail-courier">Agus Supriyadi, A.Md.Kep</span>
+<span class="font-label-md text-label-md text-outline mt-0.5">NIP: 198504122010121002</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex flex-col">
+<span class="font-label-md text-label-md text-outline">Penerima Sasaran</span>
+<span class="font-label-lg text-label-lg text-on-surface font-semibold mt-1">IBS / Ruang Operasi 02</span>
+<span class="font-label-md text-label-md text-outline mt-0.5">Sterile Core Station</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.05)] flex flex-col gap-space-md">
+<div class="flex items-center gap-2 pb-2">
+<span class="material-symbols-outlined text-primary text-[22px]">assignment_turned_in</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Formulir Verifikasi Fisik &amp; Serah Terima</h3>
+<p class="font-body-sm text-body-sm text-outline">Pastikan integritas sterilisasi dan kuantitas instrumen sebelum tanda tangan penerimaan.</p>
+</div>
+</div>
+<form class="flex flex-col gap-space-md" id="confirmation-form" onsubmit="handleConfirm(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md items-start">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="received-qty">
+<span class="">Jumlah Diterima Fisik <span class="text-error">*</span></span>
+<span class="font-label-md text-label-md text-outline">Target: <strong class="text-on-surface" id="expected-qty">2</strong> Unit</span>
+</label>
+<div class="relative">
+<input class="w-full px-4 py-2.5 rounded-lg bg-surface-container-low font-headline-sm text-headline-sm font-bold text-on-surface focus:outline-none focus:bg-surface-container-lowest" id="received-qty" min="0" oninput="validateDiscrepancy()" required="" type="number" value="2">
+<span class="absolute right-3.5 top-3.5 font-label-lg text-label-lg text-outline">Unit</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary flex items-center gap-1 mt-0.5" id="qty-feedback">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                Jumlah fisik sesuai dengan manifest pengiriman.
+              </p>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-lg text-label-lg text-on-surface">Kondisi Alat &amp; Indikator Kemasan <span class="text-error">*</span></span>
+<div class="grid grid-cols-1 gap-2">
+<label class="cursor-pointer flex items-center justify-between p-3 rounded-lg bg-surface-container-low transition-colors has-[:checked]:bg-primary-container/10 has-[:checked]:text-primary">
+<div class="flex items-center gap-2.5">
+<input checked="" class="accent-primary w-4 h-4" name="item-condition" onchange="toggleConditionNotes(false)" type="radio" value="good">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Kondisi Baik / Steril Terjaga</span>
+<span class="font-body-sm text-body-sm text-outline">Indikator kimia valid, segel utuh, tidak ada deformasi</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">task_alt</span>
+</label>
+<label class="cursor-pointer flex items-center justify-between p-3 rounded-lg bg-surface-container-low transition-colors has-[:checked]:bg-error-container/20 has-[:checked]:text-error">
+<div class="flex items-center gap-2.5">
+<input class="accent-error w-4 h-4" name="item-condition" onchange="toggleConditionNotes(true)" type="radio" value="damaged">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Kondisi Rusak / Cacat Kemasan</span>
+<span class="font-body-sm text-body-sm text-outline">Pouch berlubang, indikator pucat, atau instrumen cacat</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+</label>
+</div>
+</div>
+</div>
+<div class="hidden p-3.5 rounded-lg bg-error-container/30 flex flex-col gap-1.5" id="discrepancy-wrapper">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[18px]">report_problem</span>
+<span class="font-label-lg text-label-lg font-bold">Terdeteksi Selisih Kuantitas</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-error-container">
+              Wajib diisi jika jumlah diterima tidak sama dengan jumlah dikirim. Berikan alasan selisih untuk audit farmasi/CSSD.
+            </p>
+<input class="mt-1 w-full px-3 py-2 bg-surface-container-lowest rounded-lg font-body-md text-body-md text-on-surface focus:outline-none placeholder:text-outline" id="discrepancy-reason" placeholder="Contoh: 1 unit tertinggal di keranjang transit..." type="text">
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center justify-between" for="inspection-notes">
+<span class="">Catatan Pemeriksaan Tambahan</span>
+<span class="font-body-sm text-body-sm text-outline">Opsional / Rekam Klinis</span>
+</label>
+<textarea class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest" id="inspection-notes" placeholder="Tuliskan catatan verifikasi..." rows="3">Diterima langsung di meja serah terima OK 02. Indikator kimia autoclave hitam pekat, siap pakai.</textarea>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<span class="">Penanggung Jawab Penerima: <strong>Ratna Sari, S.Kep</strong> (NIP: 198902142014022001)</span>
+</div>
+<span class="text-outline font-label-code">IP: 192.168.12.44</span>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-end gap-space-md pt-2">
+<button class="w-full sm:w-auto px-5 py-3 rounded-lg bg-surface-container text-error hover:bg-error-container hover:text-on-error-container font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-colors" onclick="reportProblem()" type="button">
+<span class="material-symbols-outlined text-[20px]">report</span>
+              Tolak / Laporkan Masalah
+            </button>
+<button class="w-full sm:w-auto px-7 py-3 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-md transition-all" type="submit">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+              Konfirmasi Penerimaan
+            </button>
+</div>
+</form>
+</div>
+</section>
+</div>
+</div>
+<script>
+  const itemDatabase = {
+    'ALT-BDH-004': {
+      manifest: '#DIS-20250518-0938',
+      name: 'Set Bedah Mayor Laparatomi',
+      code: 'ALT-BDH-004',
+      qty: 2,
+      origin: 'Gudang Inventori Sentral',
+      timestamp: '18 Mei 2025, 09:38 WIB',
+      courier: 'Agus Supriyadi, A.Md.Kep',
+      defaultNotes: 'Diterima langsung di meja serah terima OK 02. Indikator kimia autoclave hitam pekat, siap pakai.'
+    },
+    'ALT-BDH-045': {
+      manifest: '#DIS-20250518-0815',
+      name: 'Gunting Jaringan Metzenbaum Curved 18cm',
+      code: 'ALT-BDH-045',
+      qty: 5,
+      origin: 'CSSD Sterilisasi',
+      timestamp: '18 Mei 2025, 08:15 WIB',
+      courier: 'Dedi Prasetyo',
+      defaultNotes: 'Indikator EO Gas kuning keemasan, kondisi pack steril rapat tanpa robekan.'
+    },
+    'ALT-BDH-077': {
+      manifest: '#DIS-20250517-1645',
+      name: 'Klem Hemostatik Pean Lurus 14cm',
+      code: 'ALT-BDH-077',
+      qty: 10,
+      origin: 'Gudang Inventori Sentral',
+      timestamp: '17 Mei 2025, 16:45 WIB',
+      courier: 'Ratna Sari',
+      defaultNotes: 'Koleksi instrumen lengkap 10 buah dalam tray pelindung stainless steel.'
+    }
+  };
+
+  let currentItemKey = 'ALT-BDH-004';
+
+  function selectDistributionItem(element, itemKey) {
+    currentItemKey = itemKey;
+    const data = itemDatabase[itemKey];
+    if (!data) return;
+
+    const listContainer = document.getElementById('distribution-list');
+    const articles = listContainer.querySelectorAll('article');
+    articles.forEach(art => {
+      art.classList.remove('bg-surface-container-low', 'shadow-[0_1px_4px_rgba(0,104,95,0.12)]');
+      art.classList.add('bg-surface-container-lowest');
+      const badgeIndicator = art.querySelector('.active-selected-tag');
+      if (badgeIndicator) badgeIndicator.remove();
+    });
+
+    element.classList.remove('bg-surface-container-lowest');
+    element.classList.add('bg-surface-container-low', 'shadow-[0_1px_4px_rgba(0,104,95,0.12)]');
+
+    document.getElementById('manifest-number').innerText = 'Detail Pengiriman ' + data.manifest;
+    document.getElementById('detail-item-name').innerText = data.name;
+    document.getElementById('detail-item-code').innerText = data.code;
+    document.getElementById('detail-qty-sent').innerText = data.qty;
+    document.getElementById('detail-origin').innerText = data.origin;
+    document.getElementById('detail-timestamp').innerText = data.timestamp;
+    document.getElementById('detail-courier').innerText = data.courier;
+
+    document.getElementById('expected-qty').innerText = data.qty;
+    document.getElementById('received-qty').value = data.qty;
+    document.getElementById('inspection-notes').value = data.defaultNotes;
+
+    validateDiscrepancy();
+  }
+
+  function validateDiscrepancy() {
+    const expected = parseInt(document.getElementById('expected-qty').innerText, 10);
+    const received = parseInt(document.getElementById('received-qty').value, 10);
+    const feedback = document.getElementById('qty-feedback');
+    const discrepancyWrap = document.getElementById('discrepancy-wrapper');
+    const discrepancyInput = document.getElementById('discrepancy-reason');
+
+    if (received === expected) {
+      feedback.className = 'font-body-sm text-body-sm text-primary flex items-center gap-1 mt-0.5';
+      feedback.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span> Jumlah fisik sesuai dengan manifest pengiriman.';
+      discrepancyWrap.classList.add('hidden');
+      discrepancyInput.removeAttribute('required');
+    } else {
+      feedback.className = 'font-body-sm text-body-sm text-error flex items-center gap-1 mt-0.5';
+      feedback.innerHTML = '<span class="material-symbols-outlined text-[16px]">error</span> Jumlah fisik (' + (isNaN(received) ? 0 : received) + ') tidak cocok dengan manifest (' + expected + ').';
+      discrepancyWrap.classList.remove('hidden');
+      discrepancyInput.setAttribute('required', 'true');
+    }
+  }
+
+  function toggleConditionNotes(isDamaged) {
+    const notes = document.getElementById('inspection-notes');
+    if (isDamaged) {
+      notes.value = '[PERINGATAN KERUSAKAN] Ditemukan kemasan tidak steril / robek saat serah terima. Memerlukan evaluasi ulang CSSD.';
+    } else {
+      const data = itemDatabase[currentItemKey];
+      notes.value = data ? data.defaultNotes : 'Kondisi baik dan lengkap.';
+    }
+  }
+
+  function handleConfirm(event) {
+    event.preventDefault();
+    const qty = document.getElementById('received-qty').value;
+    const name = document.getElementById('detail-item-name').innerText;
+    alert('Konfirmasi Diterima: ' + qty + ' unit ' + name + ' telah resmi masuk ke saldo operasional Instalasi Bedah Sentral.');
+  }
+
+  function reportProblem() {
+    const name = document.getElementById('detail-item-name').innerText;
+    if (confirm('Apakah Anda ingin menerbitkan Tiket Masalah Distribusi untuk ' + name + '? Muatan akan dikembalikan ke status peninjauan pengirim.')) {
+      alert('Tiket Berita Acara Kerusakan/Selisih berhasil dibuat. Notifikasi diteruskan ke Kepala Ruang IBS dan Supervisor CSSD.');
+    }
+  }
+</script></main></div>
+
+</body></html>
