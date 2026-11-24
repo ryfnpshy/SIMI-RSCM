@@ -22,7 +22,7 @@ export default function LoginPage() {
         <div className="relative w-full max-w-5xl rounded-xl bg-surface-container-lowest shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[660px]">
             {/* Left Panel: Hospital Branding & Assurance */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-primary via-primary-container to-on-primary-fixed-variant text-on-primary p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="lg:col-span-5 bg-primary text-on-primary p-6 sm:p-8 flex flex-col justify-between relative overflow-hidden">
               {/* Subtle medical cross motif SVG in background */}
               <svg className="absolute -right-16 -bottom-16 w-80 h-80 opacity-10 pointer-events-none text-on-primary" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 10.5h-5.5V5c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v5.5H5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5h5.5V19c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5.5H19c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5z" />
@@ -30,7 +30,7 @@ export default function LoginPage() {
               <div className="relative z-10 flex flex-col gap-6">
                 <div className="flex items-center gap-2">
                   <div className="h-12 w-auto flex items-center justify-center">
-                    <img alt="RSUP Nasional Dr. Cipto Mangunkusumo" className="h-12 w-auto object-contain bg-white/90 p-2 rounded-lg shadow-sm" src="/Rscm_new.png" />
+                    <img alt="RSUP Nasional Dr. Cipto Mangunkusumo" className="h-12 w-auto object-contain bg-white/95 p-2 rounded-lg shadow-raised ring-1 ring-white/20" src="/Rscm_new.png" />
                   </div>
                   <div className="flex flex-col">
                     <span className="font-headline-sm text-headline-sm text-on-primary tracking-tight">RSUP Nasional Dr. Cipto Mangunkusumo</span>
@@ -38,8 +38,8 @@ export default function LoginPage() {
                   </div>
                 </div>
                 <div className="space-y-1 mt-4">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-lowest/15 backdrop-blur text-primary-fixed text-label-md font-label-md w-fit">
-                    <span className="w-2 h-2 rounded-full bg-primary-fixed animate-ping" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-on-primary/15 text-on-primary text-label-md font-label-md w-fit ring-1 ring-inset ring-on-primary/25">
+                    <span className="w-2 h-2 rounded-full bg-primary-fixed" />
                     Sistem Aktif • Versi 2.4.0
                   </div>
                   <h1 className="font-headline-lg text-headline-lg text-on-primary leading-tight">
@@ -56,7 +56,7 @@ export default function LoginPage() {
                     </div>
                     <div className="flex flex-col">
                       <span className="font-label-lg text-label-lg text-on-primary">Pelacakan Status Real-time</span>
-                      <span className="font-body-sm text-body-sm text-on-primary/70">Penelusuran kode unik alat dari ruang operasi hingga ruang simpan.</span>
+                      <span className="font-body-sm text-body-sm text-on-primary/80">Penelusuran kode unik alat dari ruang operasi hingga ruang simpan.</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -65,7 +65,7 @@ export default function LoginPage() {
                     </div>
                     <div className="flex flex-col">
                       <span className="font-label-lg text-label-lg text-on-primary">Siklus Sterilisasi CSSD Terverifikasi</span>
-                      <span className="font-body-sm text-body-sm text-on-primary/70">Monitoring tahapan Autoclave, validasi indikator biologi dan QC rilis.</span>
+                      <span className="font-body-sm text-body-sm text-on-primary/80">Monitoring tahapan Autoclave, validasi indikator biologi dan QC rilis.</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -74,12 +74,12 @@ export default function LoginPage() {
                     </div>
                     <div className="flex flex-col">
                       <span className="font-label-lg text-label-lg text-on-primary">Audit Pergerakan Alat Akurat</span>
-                      <span className="font-body-sm text-body-sm text-on-primary/70">Pencatatan mutasi instrumen terproteksi dengan audit trail PostgreSQL.</span>
+                      <span className="font-body-sm text-body-sm text-on-primary/80">Pencatatan mutasi instrumen terproteksi dengan audit trail PostgreSQL.</span>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="relative z-10 pt-6 mt-6 flex items-center justify-between text-body-sm font-body-sm text-on-primary/60">
+              <div className="relative z-10 pt-6 mt-6 flex items-center justify-between text-body-sm font-body-sm text-on-primary/80">
                 <span className="font-label-code text-label-code">HIPAA &amp; KARS Compliant</span>
                 <span>© 2026 SIMRS RSCM</span>
               </div>
@@ -90,7 +90,6 @@ export default function LoginPage() {
               <div className="w-full max-w-md mx-auto space-y-4">
                 {/* Portal Header */}
                 <div className="flex items-center gap-2 pb-1">
-                  <img alt="SIM Inventori RSCM" className="w-10 h-10 object-contain lg:hidden" src="/Rscm_new.png" />
                   <div>
                     <div className="flex items-center gap-2">
                       <h2 className="font-headline-md text-headline-md text-on-surface">SIM Inventori RSCM</h2>
@@ -100,7 +99,7 @@ export default function LoginPage() {
                   </div>
                 </div>
                 {/* Welcome Badge / Subheading */}
-                <div className="bg-surface-container-low p-2 rounded-lg flex flex-col gap-0.5">
+                <div className="flex flex-col gap-0.5">
                   <span className="font-label-lg text-label-lg text-on-surface">Masuk ke Akun Anda</span>
                   <span className="font-body-sm text-body-sm text-on-surface-variant">Silakan masukkan kredensial resmi rumah sakit untuk mengakses unit operasional.</span>
                 </div>
@@ -114,7 +113,7 @@ export default function LoginPage() {
                       <span className="material-symbols-outlined text-[20px] text-error shrink-0 mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>error</span>
                       <div className="flex flex-col text-body-sm font-body-sm">
                         <span className="font-label-md text-label-md font-semibold text-error">{error}</span>
-                        <span className="text-on-error-container/80 text-[11px] leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS RSCM.</span>
+                        <span className="text-on-error-container/80 text-label-md leading-tight mt-0.5">Akun dinonaktifkan atau belum diverifikasi? Hubungi unit administrator SIMRS RSCM.</span>
                       </div>
                     </div>
                     <button aria-label="Tutup notifikasi" className="text-on-error-container/60 hover:text-on-error-container p-0.5 rounded" onClick={() => setDitolak(true)} type="button">
@@ -128,65 +127,65 @@ export default function LoginPage() {
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface flex items-center justify-between" htmlFor="email">
                       <span>Alamat Email Kedinasan</span>
-                      <span className="text-on-surface-variant font-label-code text-[11px]">Domain RSCM</span>
+                      <span className="font-label-code text-label-code text-on-surface-variant">Domain RSCM</span>
                     </label>
                     <div className="relative flex items-center">
                       <span className="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">mail</span>
-                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="email" name="email" placeholder="petugas@rscm.co.id" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} />
+                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-3.5 transition-all outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 placeholder:text-on-surface-variant/80" id="email" name="email" placeholder="petugas@rscm.co.id" type="email" autoComplete="username" value={email} onChange={(event) => setEmail(event.target.value)} />
                     </div>
                   </div>
                   {/* Password Field */}
                   <div className="flex flex-col gap-1.5">
                     <label className="font-label-md text-label-md text-on-surface flex items-center justify-between" htmlFor="password">
                       <span>Kata Sandi</span>
-                      <span className="text-secondary hover:underline cursor-pointer font-label-md text-[11px]">Lupa Kata Sandi?</span>
+                      <span className="text-secondary hover:underline cursor-pointer font-label-md text-label-md">Lupa Kata Sandi?</span>
                     </label>
                     <div className="relative flex items-center">
                       <span className="material-symbols-outlined absolute left-3 text-[18px] text-outline pointer-events-none">lock</span>
-                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-10 transition-all outline-none focus:ring-2 focus:ring-primary shadow-sm" id="password" name="password" placeholder="Masukkan kata sandi" type={showPassword ? "text" : "password"} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
+                      <input className="w-full bg-surface-container-low focus:bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-lg py-2.5 pl-10 pr-10 transition-all outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 placeholder:text-on-surface-variant/80" id="password" name="password" placeholder="Masukkan kata sandi" type={showPassword ? "text" : "password"} autoComplete="current-password" value={password} onChange={(event) => setPassword(event.target.value)} />
                       <button aria-label="Tampilkan atau sembunyikan kata sandi" className="absolute right-3 text-outline hover:text-on-surface p-1 rounded transition-colors flex items-center justify-center" onClick={() => setShowPassword((value) => !value)} type="button">
                         <span className="material-symbols-outlined text-[18px]">{showPassword ? "visibility_off" : "visibility"}</span>
                       </button>
                     </div>
                   </div>
                   {/* Role Selector Reference Pill Grid */}
-                  <div className="bg-surface-container-low/70 p-2 rounded-lg flex flex-col gap-2">
-                    <div className="flex items-center gap-1.5 text-on-surface-variant font-label-md text-[11px]">
+                  <div className="flex flex-col gap-2 border-t border-outline-variant/50 pt-3">
+                    <div className="flex items-center gap-1.5 text-on-surface-variant font-label-md text-label-md">
                       <span className="material-symbols-outlined text-[14px] text-secondary">badge</span>
                       <span>Otoritas Hak Akses Sistem (RBAC Terkunci):</span>
                     </div>
-                    <div className="grid grid-cols-2 gap-1.5 text-[11px]">
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-xs font-label-md">
+                    <div className="grid grid-cols-2 gap-1.5 text-label-md">
+                      <div className="flex items-center gap-1.5 px-2 py-1 rounded text-on-surface font-label-md">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                         <span>Admin Inventori</span>
                       </div>
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-xs font-label-md">
+                      <div className="flex items-center gap-1.5 px-2 py-1 rounded text-on-surface font-label-md">
                         <span className="w-1.5 h-1.5 rounded-full bg-secondary" />
                         <span>Petugas CSSD</span>
                       </div>
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-xs font-label-md">
+                      <div className="flex items-center gap-1.5 px-2 py-1 rounded text-on-surface font-label-md">
                         <span className="w-1.5 h-1.5 rounded-full bg-tertiary" />
                         <span>Unit Medis (IBS/IGD)</span>
                       </div>
-                      <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container-lowest text-on-surface shadow-xs font-label-md">
+                      <div className="flex items-center gap-1.5 px-2 py-1 rounded text-on-surface font-label-md">
                         <span className="w-1.5 h-1.5 rounded-full bg-outline" />
                         <span>Petugas Inventori</span>
                       </div>
                     </div>
                   </div>
                   {/* Submit Button */}
-                  <button className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99] disabled:opacity-70" type="submit" disabled={pending}>
+                  <button className="w-full py-3 px-4 bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg rounded-lg shadow-primary transition-all duration-150 flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0" type="submit" disabled={pending}>
                     <span className="material-symbols-outlined text-[20px]">login</span>
                     <span>{pending ? "Memverifikasi..." : "Masuk ke SIM Inventori RSCM"}</span>
                   </button>
                 </form>
                 {/* System Protection Notice */}
                 <div className="pt-1 text-center space-y-1">
-                  <div className="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-outline">
+                  <div className="inline-flex items-center gap-1.5 text-body-sm font-body-sm text-on-surface-variant">
                     <span className="material-symbols-outlined text-[16px]">lock_clock</span>
                     <span>Sistem Terproteksi RBAC Rumah Sakit</span>
                   </div>
-                  <p className="font-body-sm text-[11px] text-on-surface-variant">
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">
                     Belum punya akun?{" "}
                     <Link className="font-semibold text-primary hover:underline" href="/daftar">
                       Ajukan pendaftaran
@@ -197,7 +196,7 @@ export default function LoginPage() {
               </div>
               {/* Footnote / System Status */}
               <div className="mt-6 pt-2 text-center">
-                <span className="font-label-code text-label-code text-outline text-[11px]">
+                <span className="font-label-code text-label-code text-on-surface-variant">
                   Server ID: RSCM-CSSD-01 • Enkripsi TLS 1.3 Aktif
                 </span>
               </div>

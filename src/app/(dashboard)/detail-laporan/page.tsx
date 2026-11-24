@@ -8,7 +8,7 @@ import { LABEL_LAPORAN } from "@/lib/laporan"
 
 function Kartu({ label, nilai, catatan }: { label: string; nilai: string | number; catatan?: string }) {
   return (
-    <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+    <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
       <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">{label}</p>
       <p className="mt-1 font-headline-lg text-headline-lg text-on-surface">{nilai}</p>
       {catatan && <p className="font-body-sm text-body-sm text-on-surface-variant">{catatan}</p>}
@@ -76,7 +76,7 @@ export default async function DetailLaporanPage({
             />
           </div>
 
-          <div className="mb-6 flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="mb-6 flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Sebaran Stok per Unit</h2>
             <span className="font-body-sm text-body-sm text-on-surface-variant">
               Disusun oleh {laporan.pembuat?.nama ?? "—"} • {new Date(laporan.created_at).toLocaleString("id-ID", { dateStyle: "medium", timeStyle: "short" })}

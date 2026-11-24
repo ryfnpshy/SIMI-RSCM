@@ -15,7 +15,7 @@ export default async function ProfilPage() {
         remah={[{ label: "Dashboard", href: "/dashboard" }, { label: "Pengaturan", href: "/profil" }, { label: "Profil" }]}
       />
 
-      <section className="mb-6 flex flex-col gap-4 rounded-xl bg-surface-container-lowest p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <section className="mb-6 flex flex-col gap-4 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 font-headline-sm text-headline-sm text-primary">
             {profil.nama

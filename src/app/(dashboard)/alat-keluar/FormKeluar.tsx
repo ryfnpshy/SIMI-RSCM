@@ -1,6 +1,6 @@
 "use client"
 
-import { useActionState } from "react"
+import { useActionState, useState } from "react"
 import { catatDistribusi } from "@/lib/actions/inventori"
 import { useAksiSelesai } from "@/components/ui/aksiKlien"
 import type { RingkasAlat } from "@/lib/data"
@@ -11,6 +11,14 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
   const [state, formAction, pending] = useActionState(catatDistribusi, undefined)
   useAksiSelesai(state)
   const tujuan = unit.filter((item) => item.tipe !== "gudang")
+  const [alatId, setAlatId] = useState("")
+  const dipilih = alat.find((item) => item.id === alatId)
+  // Sumber distribusi: gudang (default, UC-07) atau CSSD (penyimpanan steril).
+  const sumber = unit
+    .filter((item) => item.tipe === "gudang" || item.tipe === "cssd")
+    .sort((a, b) => (a.tipe === "gudang" ? -1 : b.tipe === "gudang" ? 1 : 0))
+  const stokSumber = (tipe: string) =>
+    tipe === "gudang" ? (dipilih?.stok_gudang ?? 0) : (dipilih?.stok_cssd ?? 0)
 
   return (
     <form className="flex flex-col gap-4" action={formAction}>
@@ -19,18 +27,19 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
           Alat <span className="text-error">*</span>
         </label>
         <select
-          className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+          className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
           id="alat_id"
           name="alat_id"
           required
           defaultValue=""
+          onChange={(e) => setAlatId(e.target.value)}
         >
           <option disabled value="">
             Pilih alat berdasarkan kode unik...
           </option>
           {alat.map((item) => (
             <option key={item.id} value={item.id}>
-              {item.kode_unik} — {item.nama} (gudang: {item.stok_gudang} {item.satuan})
+              {item.kode_unik} — {item.nama} (gudang: {item.stok_gudang}, CSSD: {item.stok_cssd} {item.satuan})
             </option>
           ))}
         </select>
@@ -38,11 +47,32 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
+          <label className="font-label-lg text-label-lg text-on-surface" htmlFor="unit_asal">
+            Sumber <span className="text-error">*</span>
+          </label>
+          <select
+            className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            id="unit_asal"
+            name="unit_asal"
+            required
+            defaultValue={sumber[0]?.id ?? ""}
+          >
+            {sumber.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.nama} ({item.kode}) — {stokSumber(item.tipe)} {dipilih?.satuan ?? "unit"}
+              </option>
+            ))}
+          </select>
+          <p className="font-body-sm text-body-sm text-on-surface-variant">
+            Gudang menyimpan stok umum; CSSD menyimpan instrumen steril siap pakai.
+          </p>
+        </div>
+        <div className="flex flex-col gap-1.5">
           <label className="font-label-lg text-label-lg text-on-surface" htmlFor="unit_tujuan">
             Unit Tujuan <span className="text-error">*</span>
           </label>
           <select
-            className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             id="unit_tujuan"
             name="unit_tujuan"
             required
@@ -63,7 +93,7 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
             Jumlah Dikirim <span className="text-error">*</span>
           </label>
           <input
-            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-label-code text-label-lg text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-label-code text-label-lg text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             defaultValue={1}
             id="jumlah"
             min={1}
@@ -71,14 +101,14 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
             required
             type="number"
           />
-          <p className="font-body-sm text-body-sm text-on-surface-variant">Stok gudang berkurang saat transaksi dibuat.</p>
+          <p className="font-body-sm text-body-sm text-on-surface-variant">Stok sumber berkurang saat transaksi dibuat.</p>
         </div>
         <div className="flex flex-col gap-1.5">
           <label className="font-label-lg text-label-lg text-on-surface" htmlFor="tanggal">
             Tanggal Distribusi
           </label>
           <input
-            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             id="tanggal"
             name="tanggal"
             type="date"
@@ -89,7 +119,7 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
             Nomor BAST / Dokumen
           </label>
           <input
-            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             id="nomor_bast"
             name="nomor_bast"
             placeholder="opsional"
@@ -100,7 +130,7 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
             Catatan
           </label>
           <input
-            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+            className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             id="catatan"
             name="catatan"
             placeholder="opsional"
@@ -116,7 +146,7 @@ export function FormKeluar({ alat, unit }: { alat: RingkasAlat[]; unit: UnitRing
 
       <div className="flex items-center justify-end gap-2">
         <button
-          className="flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container disabled:opacity-70"
+          className="flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container disabled:opacity-70"
           disabled={pending}
           type="submit"
         >

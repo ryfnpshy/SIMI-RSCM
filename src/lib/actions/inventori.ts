@@ -150,6 +150,7 @@ export async function catatDistribusi(_sebelumnya: Hasil | undefined, f: FormDat
     p_tanggal: atauNull(teks(f, "tanggal")),
     p_nomor_bast: atauNull(teks(f, "nomor_bast")),
     p_catatan: atauNull(teks(f, "catatan")),
+    p_unit_asal: atauNull(teks(f, "unit_asal")),
   })
 
   if (error) return { error: pesanDb(error.message) }

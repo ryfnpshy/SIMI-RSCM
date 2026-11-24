@@ -129,7 +129,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
         </div>
         {/* Quick Stats Micro Badges */}
         <div className="flex items-center gap-2">
-          <div className="bg-surface-container-lowest px-4 py-2 rounded-xl shadow-sm flex items-center gap-3">
+          <div className="bg-surface-container-lowest px-4 py-2 rounded-xl shadow-card ring-1 ring-outline-variant/50 flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
               <span className="material-symbols-outlined text-lg">inventory_2</span>
             </div>
@@ -138,7 +138,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
               <span className="font-label-lg text-label-lg text-on-surface font-bold">{totalTerdaftar} Jenis</span>
             </div>
           </div>
-          <div className="bg-surface-container-lowest px-4 py-2 rounded-xl shadow-sm flex items-center gap-3">
+          <div className="bg-surface-container-lowest px-4 py-2 rounded-xl shadow-card ring-1 ring-outline-variant/50 flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary">
               <span className="material-symbols-outlined text-lg">verified</span>
             </div>
@@ -151,7 +151,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
       </div>
 
       {/* Medical Inventory Overview Banner with Clinical Visual */}
-      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-primary to-surface-tint p-6 text-on-primary shadow-sm mb-6">
+      <div className="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-primary to-surface-tint p-6 text-on-primary shadow-raised mb-6">
         <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="max-w-2xl flex flex-col gap-1">
             <div className="inline-flex items-center gap-2 bg-on-primary/10 px-2.5 py-1 rounded-full w-fit">
@@ -176,7 +176,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
       </div>
 
       {/* Main Data Container */}
-      <div className="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col">
+      <div className="bg-surface-container-lowest rounded-xl shadow-card ring-1 ring-outline-variant/50 overflow-hidden flex flex-col">
         {/* Action & Filter Toolbar */}
         <div className="p-4 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-surface-container-lowest">
           {/* Left Filters */}
@@ -196,7 +196,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
                   setHalaman(1)
                 }}
               />
-              <span className="font-label-code text-label-code text-on-surface-variant absolute right-3 top-1/2 -translate-y-1/2 bg-surface-container-high px-1.5 py-0.5 rounded text-[10px]">F2</span>
+              <span className="font-label-code text-label-code text-on-surface-variant absolute right-3 top-1/2 -translate-y-1/2 bg-surface-container-high px-1.5 py-0.5 rounded">F2</span>
             </div>
             {/* Filter Category */}
             <div className="relative min-w-[170px]">
@@ -375,7 +375,7 @@ export function DataAlatView({ rows }: { rows: RingkasAlat[] }) {
               .map((nomor) => (
                 <button
                   key={nomor}
-                  className={`w-8 h-8 rounded-lg font-label-md text-label-md flex items-center justify-center transition-colors ${nomor === halamanAman ? "bg-primary text-on-primary font-semibold shadow-sm" : "bg-surface-container-lowest text-on-surface hover:bg-surface-container"}`}
+                  className={`w-8 h-8 rounded-lg font-label-md text-label-md flex items-center justify-center transition-colors ${nomor === halamanAman ? "bg-primary text-on-primary font-semibold shadow-card ring-1 ring-outline-variant/50" : "bg-surface-container-lowest text-on-surface hover:bg-surface-container"}`}
                   onClick={() => setHalaman(nomor)}
                   type="button"
                 >

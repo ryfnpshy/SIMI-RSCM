@@ -37,7 +37,7 @@ export default async function NotifikasiPage() {
       />
 
       {notifikasi.length === 0 && (
-        <div className="rounded-xl bg-surface-container-lowest p-8 text-center shadow-sm">
+        <div className="rounded-xl bg-surface-container-lowest p-8 text-center shadow-card ring-1 ring-outline-variant/50">
           <span className="material-symbols-outlined text-4xl text-primary">verified</span>
           <p className="mt-2 font-body-md text-body-md text-on-surface-variant">
             Tidak ada peringatan aktif. Semua stok di atas minimum dan tidak ada alat mendekati kedaluwarsa steril.
@@ -50,7 +50,7 @@ export default async function NotifikasiPage() {
           const items = notifikasi.filter((item) => item.jenis === jenis)
           if (items.length === 0) return null
           return (
-            <section key={jenis} className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+            <section key={jenis} className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
               <div className="mb-4 flex items-center gap-3">
                 <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
                   <span className="material-symbols-outlined text-xl">{JENIS[jenis].ikon}</span>

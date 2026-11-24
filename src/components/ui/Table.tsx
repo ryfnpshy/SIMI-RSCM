@@ -33,15 +33,15 @@ function Table<T>({
     typeof accessor === "function" ? accessor(row) : String(row[accessor] ?? "")
 
   return (
-    <div className={cn("overflow-x-auto rounded-xl bg-surface-container-lowest shadow-sm", className)}>
-      <table className="w-full caption-bottom font-body-md text-body-md">
+    <div className={cn("overflow-x-auto rounded-xl bg-surface-container-lowest shadow-card ring-1 ring-outline-variant/50", className)}>
+      <table className="w-full caption-bottom font-body-md text-body-md tabular-nums">
         <thead className="border-b border-outline-variant/60 bg-surface-container-low">
           <tr>
             {columns.map((column, index) => (
               <th
                 key={index}
                 className={cn(
-                  "h-12 px-4 text-left align-middle font-label-md text-label-md text-on-surface-variant uppercase tracking-wide",
+                  "h-11 px-4 text-left align-middle font-label-md text-label-md font-semibold text-on-surface-variant uppercase tracking-wide",
                   column.className
                 )}
               >
@@ -64,7 +64,7 @@ function Table<T>({
                 className={cn(
                   "transition-colors",
                   striped && rowIndex % 2 === 1 && "bg-surface-container-low/40",
-                  hoverable && onRowClick && "hover:bg-surface-container-low cursor-pointer"
+                  hoverable && onRowClick && "hover:bg-primary/[0.045] cursor-pointer"
                 )}
                 {...(onRowClick ? { onClick: () => onRowClick(row) } : {})}
               >

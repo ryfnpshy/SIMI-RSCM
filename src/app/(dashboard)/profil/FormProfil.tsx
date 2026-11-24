@@ -21,7 +21,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
 
   return (
     <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-      <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+      <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
         <h2 className="mb-1 font-headline-sm text-headline-sm text-on-surface">Data Pribadi</h2>
         <p className="mb-4 font-body-sm text-body-sm text-on-surface-variant">
           Hanya nama, NIP, dan telepon yang bisa diubah sendiri. Peran dan unit ditetapkan Admin Inventori.
@@ -30,7 +30,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-lg text-label-lg text-on-surface">Nama Lengkap</span>
             <input
-              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
               defaultValue={profil.nama}
               name="nama"
               required
@@ -40,7 +40,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">NIP / NIK</span>
               <input
-                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
                 defaultValue={profil.nip ?? ""}
                 name="nip"
                 placeholder="opsional"
@@ -49,7 +49,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">Telepon</span>
               <input
-                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
                 defaultValue={profil.telepon ?? ""}
                 name="telepon"
                 placeholder="opsional"
@@ -59,7 +59,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
           <Pesan error={stateProfil?.error} pesan={stateProfil?.pesan} />
           <div className="flex justify-end">
             <button
-              className="flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container disabled:opacity-70"
+              className="flex items-center gap-2 rounded-lg bg-primary px-6 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container disabled:opacity-70"
               disabled={pendingProfil}
               type="submit"
             >
@@ -70,7 +70,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
         </form>
       </section>
 
-      <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+      <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
         <h2 className="mb-1 font-headline-sm text-headline-sm text-on-surface">Keamanan Akun</h2>
         <p className="mb-4 font-body-sm text-body-sm text-on-surface-variant">
           Kata sandi dikelola Supabase Auth. Ganti berkala sesuai kebijakan keamanan SIMRS.
@@ -79,7 +79,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-lg text-label-lg text-on-surface">Kata Sandi Baru</span>
             <input
-              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
               minLength={6}
               name="sandi"
               required
@@ -89,7 +89,7 @@ export function FormProfil({ profil }: { profil: Profil }) {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-lg text-label-lg text-on-surface">Ulangi Kata Sandi Baru</span>
             <input
-              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
               minLength={6}
               name="ulangi"
               required

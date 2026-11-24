@@ -17,14 +17,20 @@ const TONE: Record<BarisKeluar["status"], { label: string; variant: "success" | 
 
 function Kartu({ label, nilai, catatan, ikon }: { label: string; nilai: string; catatan: string; ikon: string }) {
   return (
-    <div className="rounded-xl bg-surface-container-lowest p-5 shadow-sm">
-      <div className="flex items-start justify-between">
-        <div>
+    <div className="relative overflow-hidden rounded-xl bg-surface-container-lowest p-5 shadow-card ring-1 ring-outline-variant/50">
+      <span
+        className="material-symbols-outlined pointer-events-none absolute -right-3 -top-3 text-[6.5rem] leading-none text-primary/[0.055]"
+        aria-hidden="true"
+      >
+        {ikon}
+      </span>
+      <div className="relative flex items-start justify-between gap-3">
+        <div className="min-w-0">
           <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">{label}</p>
-          <p className="mt-1 font-headline-lg text-headline-lg text-on-surface">{nilai}</p>
-          <p className="font-body-sm text-body-sm text-on-surface-variant">{catatan}</p>
+          <p className="mt-2 font-headline-xl text-headline-xl leading-none tabular-nums text-on-surface">{nilai}</p>
+          <p className="mt-2 font-body-sm text-body-sm text-on-surface-variant">{catatan}</p>
         </div>
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-inset ring-primary/15">
           <span className="material-symbols-outlined">{ikon}</span>
         </div>
       </div>
@@ -91,7 +97,7 @@ export default async function DashboardPage({
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         <section className="xl:col-span-2 flex flex-col gap-4">
-          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <div>
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Distribusi Terakhir</h2>
               <p className="font-body-sm text-body-sm text-on-surface-variant">6 transaksi keluar terbaru</p>
@@ -119,7 +125,7 @@ export default async function DashboardPage({
         </section>
 
         <section className="flex flex-col gap-4">
-          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <div>
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Peringatan</h2>
               <p className="font-body-sm text-body-sm text-on-surface-variant">{notifikasi.length} peringatan aktif</p>
@@ -128,7 +134,7 @@ export default async function DashboardPage({
               Semua
             </Link>
           </div>
-          <div className="flex flex-col gap-2 rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="flex flex-col gap-2 rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             {notifikasi.length === 0 && (
               <span className="font-body-sm text-body-sm text-on-surface-variant">
                 Tidak ada peringatan. Stok dan masa simpan dalam batas aman.
@@ -154,7 +160,7 @@ export default async function DashboardPage({
             ))}
           </div>
 
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Batch Sterilisasi</h2>
               <Link className="font-label-lg text-label-lg text-primary hover:underline" href="/batch-sterilisasi">

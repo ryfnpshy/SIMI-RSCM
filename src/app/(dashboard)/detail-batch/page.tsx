@@ -62,7 +62,7 @@ export default async function DetailBatchPage({
       )}
 
       {/* Stepper */}
-      <section className="mb-6 rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+      <section className="mb-6 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
         <h2 className="mb-4 font-headline-sm text-headline-sm text-on-surface">Progres Tahap</h2>
         <div className="flex flex-wrap items-center gap-2">
           {URUTAN_TAHAP.map((tahap, index) => {
@@ -97,7 +97,7 @@ export default async function DetailBatchPage({
               <input name="batch_id" type="hidden" value={batch.id} />
               <input name="tahap" type="hidden" value={tahapBerikut} />
               <button
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container"
+                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container"
                 type="submit"
               >
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
@@ -129,7 +129,7 @@ export default async function DetailBatchPage({
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
         {/* Verifikasi mutu */}
-        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <h2 className="mb-1 font-headline-sm text-headline-sm text-on-surface">Verifikasi Mutu</h2>
           <p className="mb-4 font-body-sm text-body-sm text-on-surface-variant">
             Indikator Bowie-Dick dan uji biologis. Gagal salah satu berarti batch tidak lulus.
@@ -149,7 +149,7 @@ export default async function DetailBatchPage({
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">Indikator Bowie-Dick</span>
               <select
-                className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
                 defaultValue={batch.indikator_bowie_dick ? "true" : "false"}
                 name="bowie"
               >
@@ -160,7 +160,7 @@ export default async function DetailBatchPage({
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">Uji Biologis (Spore Test)</span>
               <select
-                className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full appearance-none rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
                 defaultValue={batch.indikator_biologis ? "true" : "false"}
                 name="biologis"
               >
@@ -171,14 +171,14 @@ export default async function DetailBatchPage({
             <label className="flex flex-col gap-1.5">
               <span className="font-label-lg text-label-lg text-on-surface">Catatan</span>
               <input
-                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-sm focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50 focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
                 defaultValue={batch.catatan ?? ""}
                 name="catatan"
                 placeholder="opsional"
               />
             </label>
             <button
-              className="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container"
+              className="flex items-center justify-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container"
               type="submit"
             >
               <span className="material-symbols-outlined text-base">verified</span>
@@ -189,7 +189,7 @@ export default async function DetailBatchPage({
 
         {/* Log tahap */}
         <section className="xl:col-span-2 flex flex-col gap-4">
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Jejak Tahap &amp; Instrumen</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant">{batch.log?.length ?? 0} catatan pada batch ini</p>
           </div>

@@ -29,7 +29,8 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(
           ref={ref}
           id={selectId}
           className={cn(
-            "flex h-10 w-full rounded-lg bg-surface-container-low px-3 py-2 font-body-md text-body-md text-on-surface shadow-sm",
+            "flex h-10 w-full rounded-lg bg-surface-container-low px-3 py-2 font-body-md text-body-md text-on-surface shadow-xs ring-1 ring-inset ring-outline-variant/50",
+            "hover:ring-outline/70",
             "focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary",
             "disabled:cursor-not-allowed disabled:opacity-50",
             "transition-all",

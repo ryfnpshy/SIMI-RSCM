@@ -62,7 +62,7 @@ export default async function PengaturanPage() {
       />
 
       <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
           <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Basis Data</p>
           <p className="mt-1 flex items-center gap-2 font-headline-sm text-headline-sm text-on-surface">
             <span className="h-2 w-2 animate-pulse rounded-full bg-primary" />
@@ -70,21 +70,21 @@ export default async function PengaturanPage() {
           </p>
           <p className="font-body-sm text-body-sm text-on-surface-variant">RLS aktif, penulisan lewat RPC SECURITY DEFINER</p>
         </div>
-        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
           <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Sesi Aktif</p>
           <p className="mt-1 font-headline-sm text-headline-sm text-on-surface">{LABEL_PERAN[profil.role_id]}</p>
           <p className="font-body-sm text-body-sm text-on-surface-variant">
             {profil.unit?.nama ?? "tanpa unit"} • status {profil.status}
           </p>
         </div>
-        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
           <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Master Referensi</p>
           <p className="mt-1 font-headline-sm text-headline-sm text-on-surface">
             {unit.length} unit • {peran.length} peran
           </p>
           <p className="font-body-sm text-body-sm text-on-surface-variant">{kpi.jenisAlat} jenis alat aktif terdaftar</p>
         </div>
-        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+        <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
           <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Peringatan Aktif</p>
           <p className="mt-1 font-headline-sm text-headline-sm text-on-surface">{kpi.notifikasi} notifikasi</p>
           <p className="font-body-sm text-body-sm text-on-surface-variant">{kpi.diBawahMinimum} jenis di bawah stok minimum</p>
@@ -119,7 +119,7 @@ export default async function PengaturanPage() {
 
         <section>
           <h2 className="mb-3 font-headline-sm text-headline-sm text-on-surface">Unit &amp; Peran Terdaftar</h2>
-          <div className="mb-4 rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="mb-4 rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <p className="mb-2 font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Unit Kerja</p>
             <div className="flex flex-wrap gap-2">
               {unit.map((item) => (
@@ -129,7 +129,7 @@ export default async function PengaturanPage() {
               ))}
             </div>
           </div>
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <p className="mb-2 font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">Peran RBAC</p>
             <div className="flex flex-wrap gap-2">
               {peran.map((item) => (

@@ -37,7 +37,7 @@ export default function DaftarPage() {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-md text-label-md text-on-surface">Nama Lengkap &amp; Gelar</span>
             <input
-              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md outline-none focus:ring-2 focus:ring-primary"
+              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/80 shadow-xs ring-1 ring-inset ring-outline-variant/50 outline-none transition-all focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary"
               name="nama"
               placeholder="mis. Dewi Kartika, A.Md.Kep"
               required
@@ -48,7 +48,7 @@ export default function DaftarPage() {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-md text-label-md text-on-surface">Email Kedinasan</span>
             <input
-              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md outline-none focus:ring-2 focus:ring-primary"
+              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/80 shadow-xs ring-1 ring-inset ring-outline-variant/50 outline-none transition-all focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary"
               name="email"
               type="email"
               placeholder="nama@rscm.local"
@@ -60,18 +60,18 @@ export default function DaftarPage() {
           <label className="flex flex-col gap-1.5">
             <span className="font-label-md text-label-md text-on-surface">Kata Sandi</span>
             <input
-              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md outline-none focus:ring-2 focus:ring-primary"
+              className="rounded-lg bg-surface-container-low px-3 py-2.5 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/80 shadow-xs ring-1 ring-inset ring-outline-variant/50 outline-none transition-all focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary"
               name="password"
               type="password"
               minLength={6}
               autoComplete="new-password"
               required
             />
-            <span className="font-body-sm text-[11px] text-on-surface-variant">Minimal 6 karakter.</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">Minimal 6 karakter.</span>
           </label>
 
           <button
-            className="w-full rounded-lg bg-primary px-4 py-3 font-label-lg text-label-lg text-on-primary transition-all hover:bg-primary-container disabled:opacity-70"
+            className="w-full rounded-lg bg-primary px-4 py-3 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:bg-primary-container hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 disabled:opacity-70 disabled:hover:translate-y-0"
             type="submit"
             disabled={pending}
           >
@@ -79,7 +79,7 @@ export default function DaftarPage() {
           </button>
         </form>
 
-        <p className="font-body-sm text-[11px] text-on-surface-variant">
+        <p className="font-body-sm text-body-sm text-on-surface-variant">
           Peran (Admin/Petugas) dan unit kerja ditetapkan Admin Inventori setelah email dikonfirmasi. Pengguna pertama
           sistem otomatis menjadi Admin Inventori aktif.
         </p>

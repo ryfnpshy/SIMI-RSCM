@@ -35,7 +35,7 @@ export default async function DetailKonfirmasiPage({
       />
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-2">
-        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <h2 className="mb-4 font-headline-sm text-headline-sm text-on-surface">Rincian Pengiriman</h2>
           <div className="grid grid-cols-2 gap-3 font-body-md text-body-md">
             <span className="text-on-surface-variant">Kode unik</span>
@@ -76,7 +76,7 @@ export default async function DetailKonfirmasiPage({
           </Link>
         </section>
 
-        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           {belumDikonfirmasi ? (
             <>
               <h2 className="mb-4 font-headline-sm text-headline-sm text-on-surface">Verifikasi Penerimaan</h2>

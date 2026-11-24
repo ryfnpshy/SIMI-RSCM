@@ -2,6 +2,7 @@ import { FormStatus } from "./FormStatus"
 import { PageHeader } from "@/components/ui/PageHeader"
 import { StatusBadge } from "@/components/ui/StatusBadge"
 import { Table } from "@/components/ui/Table"
+import { requireProfil } from "@/lib/auth"
 import { daftarAlat, daftarStok, daftarUnit, type BarisStok } from "@/lib/data"
 import { tanggalSingkat } from "@/lib/utils"
 
@@ -11,7 +12,12 @@ export default async function StatusAlatPage({
   searchParams: Promise<{ alat?: string }>
 }) {
   const { alat: alatTerpilih } = await searchParams
+  const profil = await requireProfil()
   const [alat, unit, baris] = await Promise.all([daftarAlat(), daftarUnit(), daftarStok()])
+
+  // UC-03 (Perbarui Status) hanya untuk Petugas Inventori/Admin; peran lain
+  // tetap boleh memantau sebaran (UC-10) tanpa form.
+  const bolehUbah = profil.role_id === "admin_inventori" || profil.role_id === "petugas_inventori"
 
   const terpilih = alat.find((item) => item.id === alatTerpilih)
   const daftarTampil = terpilih ? baris.filter((item) => item.alat?.kode_unik === terpilih.kode_unik) : baris
@@ -32,21 +38,23 @@ export default async function StatusAlatPage({
       )}
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
-        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-sm">
-          <div className="mb-4 flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
-              <span className="material-symbols-outlined text-xl">published_with_changes</span>
+        {bolehUbah && (
+          <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
+                <span className="material-symbols-outlined text-xl">published_with_changes</span>
+              </div>
+              <div>
+                <h2 className="font-headline-sm text-headline-sm text-on-surface">Perbarui Status</h2>
+                <p className="font-body-sm text-body-sm text-on-surface-variant">Tercatat di riwayat pergerakan</p>
+              </div>
             </div>
-            <div>
-              <h2 className="font-headline-sm text-headline-sm text-on-surface">Perbarui Status</h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">Tercatat di riwayat pergerakan</p>
-            </div>
-          </div>
-          <FormStatus alat={alat} unit={unit} baris={baris} alatTerpilih={alatTerpilih} />
-        </section>
+            <FormStatus alat={alat} unit={unit} baris={baris} alatTerpilih={alatTerpilih} />
+          </section>
+        )}
 
-        <section className="xl:col-span-3 flex flex-col gap-4">
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+        <section className={`flex flex-col gap-4 ${bolehUbah ? "xl:col-span-3" : "xl:col-span-5"}`}>
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Sebaran Stok per Unit</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant">
               {daftarTampil.length} baris lokasi dengan stok tercatat

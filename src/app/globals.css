@@ -121,8 +121,8 @@
   --text-body-sm: 12px;
   --text-body-sm--line-height: 16px;
   --text-body-sm--font-weight: 400;
-  --text-badge-sm: 11px;
-  --text-badge-sm--line-height: 14px;
+  --text-badge-sm: 12px;
+  --text-badge-sm--line-height: 16px;
   --text-badge-sm--letter-spacing: 0.04em;
   --text-badge-sm--font-weight: 600;
 
@@ -130,17 +130,100 @@
   --radius: 0.25rem;
   --radius-lg: 0.5rem;
   --radius-xl: 0.75rem;
+
+  /* Depth: layered, offset, cool-ink shadows. Tinted with --color-on-surface
+   * (#131b2e) so depth stays inside the palette. Overriding the defaults lifts
+   * every `shadow-sm/md/lg/xl` usage in the app at once. */
+  --shadow-2xs: 0 1px 2px rgb(19 27 46 / 0.04);
+  --shadow-xs: 0 1px 2px rgb(19 27 46 / 0.05), 0 1px 3px rgb(19 27 46 / 0.05);
+  --shadow-sm: 0 1px 2px rgb(19 27 46 / 0.04), 0 2px 6px -1px rgb(19 27 46 / 0.06);
+  --shadow-md: 0 2px 4px -1px rgb(19 27 46 / 0.06), 0 6px 16px -3px rgb(19 27 46 / 0.10);
+  --shadow-lg: 0 4px 8px -2px rgb(19 27 46 / 0.07), 0 12px 28px -6px rgb(19 27 46 / 0.14);
+  --shadow-xl: 0 8px 16px -4px rgb(19 27 46 / 0.08), 0 24px 48px -12px rgb(19 27 46 / 0.20);
+  /* Named tokens for the shared surfaces. */
+  --shadow-card: 0 1px 2px rgb(19 27 46 / 0.04), 0 2px 6px -1px rgb(19 27 46 / 0.06);
+  --shadow-raised: 0 2px 4px -1px rgb(19 27 46 / 0.06), 0 8px 20px -4px rgb(19 27 46 / 0.12);
+  --shadow-float: 0 12px 32px -8px rgb(19 27 46 / 0.24);
+  --shadow-primary: 0 6px 18px -4px rgb(0 104 95 / 0.30);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--color-surface);
+  background:
+    radial-gradient(120% 90% at 100% 0%, rgb(0 104 95 / 0.04) 0%, transparent 55%),
+    radial-gradient(90% 70% at 0% 100%, rgb(0 99 152 / 0.035) 0%, transparent 50%),
+    var(--color-surface);
+  background-attachment: fixed;
   color: var(--color-on-surface);
   font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
 }
 
-/* Stitch hides scrollbars inside rendered frames */
+/* Headings balance across lines; prose avoids orphans. */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Browser surfaces, themed from the palette (cheapest built-vs-assembled signal). */
+::selection {
+  background: rgb(0 104 95 / 0.16);
+  color: var(--color-on-surface);
+}
+
+input,
+textarea,
+select {
+  caret-color: var(--color-primary);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* A slim, palette-themed scrollbar instead of the previous display:none hack
+ * (that came from Stitch's rendered frames and swallowed real scrolling). */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-outline-variant) transparent;
+}
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-outline-variant);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline);
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .material-symbols-outlined {

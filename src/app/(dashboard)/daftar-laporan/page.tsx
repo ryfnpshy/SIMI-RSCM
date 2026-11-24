@@ -19,7 +19,7 @@ export default async function DaftarLaporanPage() {
       />
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
-        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <div className="mb-4 flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
               <span className="material-symbols-outlined text-xl">summarize</span>
@@ -33,7 +33,7 @@ export default async function DaftarLaporanPage() {
         </section>
 
         <section className="xl:col-span-3 flex flex-col gap-4">
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Laporan Tersimpan</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant">{laporan.length} laporan</p>
           </div>

@@ -28,7 +28,7 @@ const LAPORAN: readonly Peran[] = ["admin_inventori", "petugas_inventori", "petu
 
 const RUTE: { rute: string; roles: readonly Peran[] }[] = [
   { rute: "/dashboard", roles: SEMUA_PERAN },
-  { rute: "/data-alat", roles: SEMUA_PERAN },
+  { rute: "/data-alat", roles: ADMIN },
   { rute: "/alat-masuk", roles: INVENTORI },
   { rute: "/alat-keluar", roles: INVENTORI },
   { rute: "/status-alat", roles: SEMUA_PERAN },

@@ -29,10 +29,10 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={inputId}
           className={cn(
-            "flex h-10 w-full rounded-lg bg-surface-container-low px-3 py-2 font-body-md text-body-md text-on-surface placeholder-on-surface-variant/60 shadow-sm",
+            "flex h-10 w-full rounded-lg bg-surface-container-low px-3 py-2 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/80 shadow-xs ring-1 ring-inset ring-outline-variant/50 transition-all",
+            "hover:ring-outline/70",
             "focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary",
             "disabled:cursor-not-allowed disabled:opacity-50",
-            "transition-all",
             error && "ring-2 ring-error",
             Icon && "pl-10",
             className

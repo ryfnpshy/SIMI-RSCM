@@ -27,7 +27,7 @@ const Switch = forwardRef<HTMLButtonElement, SwitchProps>(
       >
         <span
           className={cn(
-            "inline-block h-4 w-4 transform rounded-full bg-surface-container-lowest shadow ring-0 transition-transform",
+            "inline-block h-4 w-4 transform rounded-full bg-surface-container-lowest shadow-sm ring-1 ring-inset ring-on-surface/10 transition-transform duration-150",
             checked ? "translate-x-5" : "translate-x-1"
           )}
         />

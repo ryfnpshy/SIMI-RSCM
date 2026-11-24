@@ -25,7 +25,7 @@ export default async function AlatKeluarPage({
     <div className="flex w-full flex-col">
       <PageHeader
         judul="Alat Keluar / Distribusi"
-        deskripsi="Distribusi alat steril dari gudang CSSD ke unit medis, dengan konfirmasi penerimaan di sisi unit."
+        deskripsi="Distribusi alat dari gudang atau CSSD ke unit medis, dengan konfirmasi penerimaan di sisi unit."
         remah={[{ label: "Dashboard", href: "/dashboard" }, { label: "Transaksi", href: "/alat-keluar" }, { label: "Distribusi" }]}
       />
 
@@ -37,21 +37,21 @@ export default async function AlatKeluarPage({
       )}
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
-        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <div className="mb-4 flex items-center gap-3">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
               <span className="material-symbols-outlined text-xl">local_shipping</span>
             </div>
             <div>
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Form Distribusi</h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant">Stok gudang dipotong, unit menunggu konfirmasi</p>
+              <p className="font-body-sm text-body-sm text-on-surface-variant">Stok sumber dipotong, unit menunggu konfirmasi</p>
             </div>
           </div>
           <FormKeluar alat={alat} unit={unit} />
         </section>
 
         <section className="xl:col-span-3 flex flex-col gap-4">
-          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="flex items-center justify-between rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <div>
               <h2 className="font-headline-sm text-headline-sm text-on-surface">Riwayat Distribusi</h2>
               <p className="font-body-sm text-body-sm text-on-surface-variant">20 transaksi keluar terbaru</p>
@@ -73,6 +73,7 @@ export default async function AlatKeluarPage({
                 ),
               },
               { header: "Tanggal", accessor: (row) => tanggalSingkat(row.tanggal) },
+              { header: "Asal", accessor: (row) => row.asal?.nama ?? "—" },
               { header: "Tujuan", accessor: (row) => row.tujuan?.nama ?? "—" },
               {
                 header: "Jumlah",

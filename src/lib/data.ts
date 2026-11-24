@@ -27,6 +27,7 @@ export type RingkasAlat = {
   stok_cssd: number
   stok_unit_medis: number
   kedaluwarsa_terdekat: string | null
+  dalam_batch: boolean
 }
 
 export async function daftarAlat(cari?: string) {
@@ -201,6 +202,52 @@ export async function daftarRiwayat(batas = 60) {
     .limit(batas)
   if (error) throw new Error(error.message)
   return (data ?? []) as unknown as BarisRiwayat[]
+}
+
+export type BarisGerak = {
+  id: string
+  waktu: string
+  jenis: "Penerimaan" | "Distribusi" | "Konfirmasi Penerimaan"
+  kode_unik: string
+  nama_alat: string
+  satuan: string
+  jumlah: number
+  nomor: string
+  asal: string | null
+  tujuan: string | null
+  keterangan: string | null
+  pengguna: string | null
+  ref_id: string
+}
+
+/** Riwayat pergerakan lintas transaksi (UC-02): masuk, keluar, konfirmasi. */
+export async function daftarRiwayatGerak(filter: {
+  kode?: string
+  unit?: string
+  mulai?: string
+  selesai?: string
+  batas?: number
+} = {}) {
+  const supabase = await createClient()
+  let kueri = supabase
+    .from("v_riwayat_gerak")
+    .select("*")
+    .order("waktu", { ascending: false })
+    .limit(filter.batas ?? 100)
+
+  const syarat: string[] = []
+  const kode = filter.kode?.replace(/[,()]/g, " ").trim()
+  if (kode) {
+    syarat.push(`kode_unik.ilike.%${kode}%`, `nama_alat.ilike.%${kode}%`, `nomor.ilike.%${kode}%`)
+  }
+  if (filter.unit) syarat.push(`asal_id.eq.${filter.unit}`, `tujuan_id.eq.${filter.unit}`)
+  if (syarat.length) kueri = kueri.or(syarat.join(","))
+  if (filter.mulai) kueri = kueri.gte("waktu", filter.mulai)
+  if (filter.selesai) kueri = kueri.lte("waktu", `${filter.selesai}T23:59:59`)
+
+  const { data, error } = await kueri
+  if (error) throw new Error(error.message)
+  return (data ?? []) as BarisGerak[]
 }
 
 export type BarisBatch = {

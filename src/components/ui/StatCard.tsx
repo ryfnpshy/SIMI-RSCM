@@ -14,12 +14,12 @@ interface StatCardProps {
 
 export function StatCard({ title, value, change, changeType, icon: Icon, iconColor = "teal", trend = "neutral" }: StatCardProps) {
   const iconColors = {
-    teal: "bg-primary/10 text-primary",
-    blue: "bg-secondary/10 text-secondary",
-    emerald: "bg-primary/10 text-primary",
-    amber: "bg-tertiary-fixed/40 text-tertiary",
-    red: "bg-error-container text-on-error-container",
-    purple: "bg-secondary/10 text-secondary",
+    teal: "bg-primary/10 text-primary ring-primary/15",
+    blue: "bg-secondary/10 text-secondary ring-secondary/15",
+    emerald: "bg-primary/10 text-primary ring-primary/15",
+    amber: "bg-tertiary-fixed/40 text-tertiary ring-tertiary/20",
+    red: "bg-error-container text-on-error-container ring-error/20",
+    purple: "bg-secondary/10 text-secondary ring-secondary/15",
   }
 
   const changeColors = {
@@ -30,22 +30,26 @@ export function StatCard({ title, value, change, changeType, icon: Icon, iconCol
   }
 
   return (
-    <Card>
-      <CardContent className="p-4">
-        <div className="flex items-center justify-between">
-          <div>
+    <Card className="relative overflow-hidden">
+      <CardContent className="p-5">
+        <Icon
+          className="pointer-events-none absolute -right-4 -top-4 h-28 w-28 text-primary/[0.055]"
+          aria-hidden="true"
+        />
+        <div className="relative flex items-start justify-between gap-3">
+          <div className="min-w-0">
             <p className="font-label-md text-label-md uppercase tracking-wide text-on-surface-variant">{title}</p>
-            <p className="mt-1 font-headline-xl text-headline-xl text-on-surface">{value}</p>
+            <p className="mt-2 font-headline-xl text-headline-xl leading-none tabular-nums text-on-surface">{value}</p>
             {change && (
-              <p className={cn("mt-1 font-label-md text-label-md", changeColors[changeType || "neutral"])}>
+              <p className={cn("mt-2 font-label-md text-label-md", changeColors[changeType || "neutral"])}>
                 {trend === "up" && "↑ "}
                 {trend === "down" && "↓ "}
                 {change}
               </p>
             )}
           </div>
-          <div className={cn("flex h-12 w-12 items-center justify-center rounded-xl", iconColors[iconColor as keyof typeof iconColors] || iconColors.teal)}>
-            <Icon className="h-6 w-6" aria-hidden="true" />
+          <div className={cn("flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ring-1 ring-inset", iconColors[iconColor as keyof typeof iconColors] || iconColors.teal)}>
+            <Icon className="h-5 w-5" aria-hidden="true" />
           </div>
         </div>
       </CardContent>

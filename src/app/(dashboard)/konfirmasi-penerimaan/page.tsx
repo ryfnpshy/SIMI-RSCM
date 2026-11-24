@@ -39,7 +39,7 @@ export default async function KonfirmasiPenerimaanPage({
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
         <section className="xl:col-span-2 flex flex-col gap-6">
-          <div className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
             <div className="mb-4 flex items-center gap-3">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
                 <span className="material-symbols-outlined text-xl">fact_check</span>
@@ -52,7 +52,7 @@ export default async function KonfirmasiPenerimaanPage({
             <FormKonfirmasi transaksi={menunggu} />
           </div>
 
-          <div className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Daftar Menunggu</h2>
             <p className="mb-3 font-body-sm text-body-sm text-on-surface-variant">Klik untuk membuka detail transaksi</p>
             <div className="flex flex-col gap-2">
@@ -80,7 +80,7 @@ export default async function KonfirmasiPenerimaanPage({
         </section>
 
         <section className="xl:col-span-3 flex flex-col gap-4">
-          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+          <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Riwayat Konfirmasi</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant">20 konfirmasi terakhir</p>
           </div>

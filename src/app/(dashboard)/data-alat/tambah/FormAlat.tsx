@@ -66,7 +66,7 @@ export function FormAlat({
             </p>
           </div>
           <div className="flex items-center gap-2 self-start sm:self-auto">
-            <span className="w-2 h-2 rounded-full bg-primary animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-primary" />
             <span className="font-label-md text-label-md text-on-surface-variant">
               {modeUbah ? "Mode Ubah Data" : "Mode Entri Baru"}
             </span>
@@ -86,7 +86,7 @@ export function FormAlat({
         <input name="aktif" type="hidden" value={aktif ? "aktif" : "nonaktif"} />
 
         {/* SECTION 1: Informasi Dasar */}
-        <section className="bg-surface-container-lowest rounded-xl shadow-sm p-6 sm:p-8">
+        <section className="bg-surface-container-lowest rounded-xl shadow-card ring-1 ring-outline-variant/50 p-6 sm:p-8">
           <div className="flex items-center justify-between pb-4 mb-6">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
@@ -109,7 +109,7 @@ export function FormAlat({
               <div className="relative flex items-center">
                 <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">tag</span>
                 <input
-                  className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                  className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                   id="kode_unik"
                   maxLength={50}
                   name="kode_unik"
@@ -129,7 +129,7 @@ export function FormAlat({
               <div className="relative flex items-center">
                 <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">category</span>
                 <select
-                  className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-10 pr-10 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none cursor-pointer"
+                  className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-10 pr-10 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 appearance-none cursor-pointer"
                   id="kategori"
                   name="kategori"
                   required
@@ -156,7 +156,7 @@ export function FormAlat({
               <div className="relative flex items-center">
                 <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">label</span>
                 <input
-                  className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                  className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                   id="nama"
                   name="nama"
                   placeholder="mis. Gunting Jaringan Metzenbaum Lengkung 18cm"
@@ -176,7 +176,7 @@ export function FormAlat({
                 <span className="font-label-code text-badge-sm text-on-surface-variant">{catatan.length}/255</span>
               </div>
               <textarea
-                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm resize-none"
+                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface p-3.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 resize-none"
                 id="catatan"
                 maxLength={255}
                 name="catatan"
@@ -192,7 +192,7 @@ export function FormAlat({
                 Jenis Aset <span className="text-error">*</span>
               </label>
               <select
-                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none cursor-pointer"
+                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 appearance-none cursor-pointer"
                 id="jenis"
                 name="jenis"
                 defaultValue={alat?.jenis ?? "reusable"}
@@ -208,7 +208,7 @@ export function FormAlat({
                 Satuan <span className="text-error">*</span>
               </label>
               <input
-                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                 id="satuan"
                 name="satuan"
                 required
@@ -221,7 +221,7 @@ export function FormAlat({
                 Merek / Pabrikan
               </label>
               <input
-                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                 id="merek"
                 name="merek"
                 defaultValue={alat?.merek ?? ""}
@@ -234,7 +234,7 @@ export function FormAlat({
                 Minimum Stok <span className="text-error">*</span>
               </label>
               <input
-                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                 id="jumlah_minimum_stok"
                 min="0"
                 name="jumlah_minimum_stok"
@@ -250,7 +250,7 @@ export function FormAlat({
                 Limit Siklus Sterilisasi
               </label>
               <input
-                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                 id="limit_siklus"
                 min="1"
                 name="limit_siklus"
@@ -266,7 +266,7 @@ export function FormAlat({
                 Masa Simpan Steril (hari)
               </label>
               <input
-                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface px-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                 id="masa_simpan_hari"
                 min="1"
                 name="masa_simpan_hari"
@@ -284,7 +284,7 @@ export function FormAlat({
                 <div className="relative flex items-center">
                   <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-lg">inventory_2</span>
                   <input
-                    className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                    className="w-full bg-surface-container-lowest font-label-code text-label-lg text-on-surface pl-10 pr-4 py-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                     id="jumlah_awal"
                     min="0"
                     name="jumlah_awal"
@@ -317,7 +317,7 @@ export function FormAlat({
         </section>
 
         {/* SECTION 2: Alias Nama per Unit */}
-        <section className="bg-surface-container-lowest rounded-xl shadow-sm p-6 sm:p-8">
+        <section className="bg-surface-container-lowest rounded-xl shadow-card ring-1 ring-outline-variant/50 p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 mb-4 gap-2">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
@@ -348,7 +348,7 @@ export function FormAlat({
                   <div className="relative flex items-center">
                     <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-base">domain</span>
                     <select
-                      className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-9 pr-8 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none cursor-pointer"
+                      className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-9 pr-8 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50 appearance-none cursor-pointer"
                       name="alias_unit"
                       onChange={(event) => setAliases((rows) => rows.map((r, i) => (i === index ? { ...r, unit: event.target.value } : r)))}
                       value={row.unit}
@@ -367,7 +367,7 @@ export function FormAlat({
                   <div className="relative flex items-center">
                     <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-base">edit_note</span>
                     <input
-                      className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-9 pr-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                      className="w-full bg-surface-container-lowest font-body-md text-body-md text-on-surface pl-9 pr-3 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary shadow-xs ring-1 ring-inset ring-outline-variant/50"
                       name="alias_nama"
                       placeholder="mis. Gunting Jaringan 18cm"
                       type="text"
@@ -402,7 +402,7 @@ export function FormAlat({
         </section>
 
         {/* SECTION 3: Form Actions */}
-        <div className="bg-surface-container-lowest rounded-xl shadow-sm p-4 sm:p-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+        <div className="bg-surface-container-lowest rounded-xl shadow-card ring-1 ring-outline-variant/50 p-4 sm:p-6 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
           <Link className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface text-center font-label-lg text-label-lg transition-colors flex items-center justify-center gap-2" href="/data-alat">
             <span className="material-symbols-outlined text-base">arrow_back</span>
             <span className="">Batal</span>

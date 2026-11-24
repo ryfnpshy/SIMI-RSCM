@@ -33,7 +33,7 @@ export default async function DetailPenggunaPage({
             <AksiForm aksi={aktifkanPengguna}>
               <input name="id" type="hidden" value={pengguna.id} />
               <button
-                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-sm transition-colors hover:bg-primary-container"
+                className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container"
                 type="submit"
               >
                 <span className="material-symbols-outlined text-base">how_to_reg</span>
@@ -51,12 +51,12 @@ export default async function DetailPenggunaPage({
       )}
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
-        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <h2 className="mb-4 font-headline-sm text-headline-sm text-on-surface">Peran, Unit &amp; Status</h2>
           <FormPengguna pengguna={pengguna} unit={unit} peran={peran} />
         </section>
 
-        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-sm">
+        <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
           <h2 className="mb-4 font-headline-sm text-headline-sm text-on-surface">Ringkasan Akun</h2>
           <div className="grid grid-cols-2 gap-3 font-body-md text-body-md">
             <span className="text-on-surface-variant">Email</span>
