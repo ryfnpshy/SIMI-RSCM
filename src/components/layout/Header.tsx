@@ -22,16 +22,18 @@ export function Header({ profil, onMenuClick }: { profil: Profil; onMenuClick?: 
         </button>
 
         {/* Search */}
-        <div className="hidden sm:block sm:w-80">
+        <form action="/cari" className="hidden sm:block sm:w-80" method="get" role="search">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-outline" />
             <input
+              name="q"
               type="search"
               placeholder="Cari kode unik, nama alat, batch..."
+              aria-label="Cari kode unik, nama alat, atau batch"
               className="w-full rounded-lg bg-surface-container-low py-2 pl-10 pr-4 font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant/80 shadow-xs ring-1 ring-inset ring-outline-variant/50 transition-all focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary"
             />
           </div>
-        </div>
+        </form>
 
         {/* Right side actions */}
         <div className="flex items-center gap-2">

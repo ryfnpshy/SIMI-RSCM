@@ -275,8 +275,20 @@ export async function daftarBatch(batas = 30) {
   return (data ?? []) as unknown as BarisBatch[]
 }
 
-export async function detailBatch(id: string) {
+export async function cariBatch(cari: string, batas = 20) {
   const supabase = await createClient()
+  const q = `%${cari.trim()}%`
+  const { data, error } = await supabase
+    .from("batch_sterilisasi")
+    .select("id, nomor, mesin, tahap, indikator_bowie_dick, indikator_biologis, hasil_verifikasi, catatan, mulai_at, selesai_at, pembuat:users(nama)")
+    .or(`nomor.ilike.${q},mesin.ilike.${q}`)
+    .order("created_at", { ascending: false })
+    .limit(batas)
+  if (error) throw new Error(error.message)
+  return (data ?? []) as unknown as BarisBatch[]
+}
+
+export async function detailBatch(id: string) {  const supabase = await createClient()
   const { data, error } = await supabase
     .from("batch_sterilisasi")
     .select(

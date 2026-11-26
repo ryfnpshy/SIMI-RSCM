@@ -33,6 +33,7 @@ const RUTE: { rute: string; roles: readonly Peran[] }[] = [
   { rute: "/alat-keluar", roles: INVENTORI },
   { rute: "/status-alat", roles: SEMUA_PERAN },
   { rute: "/riwayat-pergerakan", roles: SEMUA_PERAN },
+  { rute: "/cari", roles: SEMUA_PERAN },
   { rute: "/batch-sterilisasi", roles: CSSD },
   { rute: "/detail-batch", roles: CSSD },
   // CSSD juga mengonfirmasi penerimaan pengembalian alat kotor dari unit.
