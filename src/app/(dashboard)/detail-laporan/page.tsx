@@ -47,6 +47,17 @@ export default async function DetailLaporanPage({
           { label: "Daftar Laporan", href: "/daftar-laporan" },
           { label: "Detail" },
         ]}
+        aksi={
+          data ? (
+            <a
+              className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2.5 font-label-lg text-label-lg text-on-primary shadow-primary transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 hover:bg-primary-container"
+              href={`/detail-laporan/pdf?id=${laporan.id}`}
+            >
+              <span className="material-symbols-outlined text-base">picture_as_pdf</span>
+              Unduh PDF
+            </a>
+          ) : undefined
+        }
       />
 
       {galat && (
