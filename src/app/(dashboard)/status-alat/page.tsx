@@ -1,4 +1,5 @@
 import { FormStatus } from "./FormStatus"
+import { FormKembali } from "./FormKembali"
 import { PageHeader } from "@/components/ui/PageHeader"
 import { StatusBadge } from "@/components/ui/StatusBadge"
 import { Table } from "@/components/ui/Table"
@@ -19,6 +20,16 @@ export default async function StatusAlatPage({
   // tetap boleh memantau sebaran (UC-10) tanpa form.
   const bolehUbah = profil.role_id === "admin_inventori" || profil.role_id === "petugas_inventori"
 
+  // UC-07 lanjutan (Pengembalian ke CSSD): Unit Medis mengembalikan alat kotor
+  // dari unitnya; Inventori/Admin boleh mengembalikan dari unit mana pun.
+  const bolehKembalikan =
+    profil.role_id === "admin_inventori" ||
+    profil.role_id === "petugas_inventori" ||
+    profil.role_id === "petugas_unit_medis"
+  const unitMedis = unit.filter((item) => item.tipe === "unit_medis")
+  const unitTetap = profil.role_id === "petugas_unit_medis" ? profil.unit_id ?? undefined : undefined
+  const adaPanelKiri = bolehUbah || bolehKembalikan
+
   const terpilih = alat.find((item) => item.id === alatTerpilih)
   const daftarTampil = terpilih ? baris.filter((item) => item.alat?.kode_unik === terpilih.kode_unik) : baris
 
@@ -38,22 +49,47 @@ export default async function StatusAlatPage({
       )}
 
       <div className="grid grid-cols-1 gap-6 xl:grid-cols-5">
-        {bolehUbah && (
-          <section className="xl:col-span-2 rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
-            <div className="mb-4 flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
-                <span className="material-symbols-outlined text-xl">published_with_changes</span>
-              </div>
-              <div>
-                <h2 className="font-headline-sm text-headline-sm text-on-surface">Perbarui Status</h2>
-                <p className="font-body-sm text-body-sm text-on-surface-variant">Tercatat di riwayat pergerakan</p>
-              </div>
-            </div>
-            <FormStatus alat={alat} unit={unit} baris={baris} alatTerpilih={alatTerpilih} />
-          </section>
+        {adaPanelKiri && (
+          <div className="flex flex-col gap-6 xl:col-span-2">
+            {bolehUbah && (
+              <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
+                    <span className="material-symbols-outlined text-xl">published_with_changes</span>
+                  </div>
+                  <div>
+                    <h2 className="font-headline-sm text-headline-sm text-on-surface">Perbarui Status</h2>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant">Tercatat di riwayat pergerakan</p>
+                  </div>
+                </div>
+                <FormStatus alat={alat} unit={unit} baris={baris} alatTerpilih={alatTerpilih} />
+              </section>
+            )}
+
+            {bolehKembalikan && (
+              <section className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-surface-container text-primary">
+                    <span className="material-symbols-outlined text-xl">recycling</span>
+                  </div>
+                  <div>
+                    <h2 className="font-headline-sm text-headline-sm text-on-surface">Kembalikan ke CSSD</h2>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant">Alat kotor diproses cuci &amp; steril ulang</p>
+                  </div>
+                </div>
+                <FormKembali
+                  alat={alat}
+                  baris={baris}
+                  unitMedis={unitMedis}
+                  unitTetap={unitTetap}
+                  alatTerpilih={alatTerpilih}
+                />
+              </section>
+            )}
+          </div>
         )}
 
-        <section className={`flex flex-col gap-4 ${bolehUbah ? "xl:col-span-3" : "xl:col-span-5"}`}>
+        <section className={`flex flex-col gap-4 ${adaPanelKiri ? "xl:col-span-3" : "xl:col-span-5"}`}>
           <div className="rounded-xl bg-surface-container-lowest p-4 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Sebaran Stok per Unit</h2>
             <p className="font-body-sm text-body-sm text-on-surface-variant">

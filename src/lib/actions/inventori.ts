@@ -186,6 +186,33 @@ export async function perbaruiStatus(_sebelumnya: Hasil | undefined, f: FormData
   return { pesan: "Status alat diperbarui." }
 }
 
+/* ----------------------------------------------- pengembalian ke CSSD */
+
+export async function kembalikanKeCssd(_sebelumnya: Hasil | undefined, f: FormData): Promise<Hasil> {
+  const alat = teks(f, "alat_id")
+  const unit = teks(f, "unit_asal")
+  const jumlah = angka(f, "jumlah")
+  if (!alat) return { error: "Pilih alat terlebih dahulu." }
+  if (!Number.isInteger(jumlah) || jumlah <= 0) return { error: "Jumlah harus bilangan bulat lebih dari nol." }
+
+  const supabase = await createClient()
+  const { error } = await supabase.rpc("api_kembalikan_ke_cssd", {
+    p_alat: alat,
+    p_jumlah: jumlah,
+    p_unit_asal: atauNull(unit),
+    p_catatan: atauNull(teks(f, "catatan")),
+  })
+
+  if (error) return { error: pesanDb(error.message) }
+
+  revalidatePath("/status-alat")
+  revalidatePath("/alat-keluar")
+  revalidatePath("/konfirmasi-penerimaan")
+  revalidatePath("/batch-sterilisasi")
+  revalidatePath("/dashboard")
+  return { pesan: "Pengembalian tercatat. Menunggu konfirmasi penerimaan CSSD." }
+}
+
 /* ------------------------------------------------- konfirmasi penerimaan */
 
 export async function konfirmasiPenerimaan(_sebelumnya: Hasil | undefined, f: FormData): Promise<Hasil> {

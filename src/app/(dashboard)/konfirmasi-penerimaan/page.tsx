@@ -4,6 +4,7 @@ import { PageHeader } from "@/components/ui/PageHeader"
 import { Table } from "@/components/ui/Table"
 import { Badge } from "@/components/ui/Badge"
 import { daftarKeluar, daftarKonfirmasi, type BarisKonfirmasi } from "@/lib/data"
+import { requireProfil } from "@/lib/auth"
 import { tanggalSingkat } from "@/lib/utils"
 
 export default async function KonfirmasiPenerimaanPage({
@@ -12,10 +13,19 @@ export default async function KonfirmasiPenerimaanPage({
   searchParams: Promise<{ status?: string }>
 }) {
   const { status } = await searchParams
+  const profil = await requireProfil()
   const [menunggu, riwayat] = await Promise.all([
     daftarKeluar("menunggu_konfirmasi", 50),
     daftarKonfirmasi(20),
   ])
+
+  // Admin melihat semua; peran lain hanya transaksi yang menuju unitnya
+  // (Unit Medis: distribusi masuk; CSSD: pengembalian alat kotor).
+  const namaUnit = profil.unit?.nama
+  const menungguTampil =
+    profil.role_id === "admin_inventori" || !namaUnit
+      ? menunggu
+      : menunggu.filter((item) => item.tujuan?.nama === namaUnit)
 
   return (
     <div className="flex w-full flex-col">
@@ -26,7 +36,7 @@ export default async function KonfirmasiPenerimaanPage({
         aksi={
           <span className="flex items-center gap-2 rounded-full bg-tertiary-fixed/50 px-4 py-2 font-label-lg text-label-lg text-tertiary">
             <span className="material-symbols-outlined text-base">pending_actions</span>
-            {menunggu.length} menunggu
+            {menungguTampil.length} menunggu
           </span>
         }
       />
@@ -49,17 +59,17 @@ export default async function KonfirmasiPenerimaanPage({
                 <p className="font-body-sm text-body-sm text-on-surface-variant">Hanya transaksi menunggu konfirmasi</p>
               </div>
             </div>
-            <FormKonfirmasi transaksi={menunggu} />
+            <FormKonfirmasi transaksi={menungguTampil} />
           </div>
 
           <div className="rounded-xl bg-surface-container-lowest p-6 shadow-card ring-1 ring-outline-variant/50">
             <h2 className="font-headline-sm text-headline-sm text-on-surface">Daftar Menunggu</h2>
             <p className="mb-3 font-body-sm text-body-sm text-on-surface-variant">Klik untuk membuka detail transaksi</p>
             <div className="flex flex-col gap-2">
-              {menunggu.length === 0 && (
+              {menungguTampil.length === 0 && (
                 <span className="font-body-sm text-body-sm text-on-surface-variant">Tidak ada transaksi menunggu.</span>
               )}
-              {menunggu.map((item) => (
+              {menungguTampil.map((item) => (
                 <Link
                   key={item.id}
                   className="flex items-center justify-between rounded-lg bg-surface p-3 transition-colors hover:bg-surface-container-low"

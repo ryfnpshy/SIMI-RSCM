@@ -64,6 +64,7 @@ async function stokRingkas(client, alatId) {
 const admin = await masuk("admin@rscm.local", "Admin123!")
 const inventori = await masuk("inventori@rscm.local", "Inventori123!")
 const unit = await masuk("unit@rscm.local", "Unit123!")
+const cssd = await masuk("cssd@rscm.local", "Cssd123!")
 
 console.log("\n[1] Data awal & invarian stok")
 {
@@ -208,6 +209,46 @@ console.log("\n[3] Aturan yang menolak")
     lompat.error?.message?.includes("ALUR_BATCH") ||
     lompat.error?.message?.includes("BATCH_BELUM_LULUS")
   ), lompat.error?.message)
+}
+
+console.log("\n[4] Pengembalian alat kotor unit -> CSSD")
+{
+  const sebelum = await stokRingkas(admin, ALAT.pinset)
+  const kemb = await unit.rpc("api_kembalikan_ke_cssd", {
+    p_alat: ALAT.pinset,
+    p_jumlah: 1,
+    p_unit_asal: OK,
+  })
+  cek("unit medis mengembalikan alat berhasil", !kemb.error, kemb.error?.message)
+
+  const sesudah = await stokRingkas(admin, ALAT.pinset)
+  cek("stok unit medis turun 1", sesudah.stok_unit_medis === sebelum.stok_unit_medis - 1,
+    `${sebelum.stok_unit_medis} -> ${sesudah.stok_unit_medis}`)
+  cek("stok CSSD naik 1", sesudah.stok_cssd === sebelum.stok_cssd + 1,
+    `${sebelum.stok_cssd} -> ${sesudah.stok_cssd}`)
+
+  const { data: st } = await admin
+    .from("stok_unit")
+    .select("status")
+    .eq("alat_id", ALAT.pinset)
+    .eq("unit_id", CSSD)
+    .single()
+  cek("alat di CSSD ditandai perlu_resterilisasi", st?.status === "perlu_resterilisasi", st?.status)
+
+  const konf = await cssd.rpc("api_konfirmasi_penerimaan", {
+    p_transaksi: kemb.data?.id,
+    p_jumlah_diterima: 1,
+    p_kondisi: "baik",
+  })
+  cek("CSSD mengonfirmasi penerimaan pengembalian", !konf.error, konf.error?.message)
+
+  const lintasUnit = await unit.rpc("api_kembalikan_ke_cssd", {
+    p_alat: ALAT.pinset,
+    p_jumlah: 1,
+    p_unit_asal: "55555555-5555-5555-5555-555555555555",
+  })
+  cek("unit tidak boleh mengembalikan dari unit lain", Boolean(lintasUnit.error?.message?.includes("AKSES_DITOLAK")),
+    lintasUnit.error?.message)
 }
 
 console.log(`\n${lulus} lulus, ${gagal} gagal`)

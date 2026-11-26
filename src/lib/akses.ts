@@ -23,7 +23,7 @@ export const LABEL_PERAN: Record<Peran, string> = {
 const ADMIN: readonly Peran[] = ["admin_inventori"]
 const INVENTORI: readonly Peran[] = ["admin_inventori", "petugas_inventori"]
 const CSSD: readonly Peran[] = ["admin_inventori", "petugas_sterilisasi"]
-const UNIT_MEDIS: readonly Peran[] = ["admin_inventori", "petugas_unit_medis"]
+const KONFIRMASI: readonly Peran[] = ["admin_inventori", "petugas_unit_medis", "petugas_sterilisasi"]
 const LAPORAN: readonly Peran[] = ["admin_inventori", "petugas_inventori", "petugas_sterilisasi"]
 
 const RUTE: { rute: string; roles: readonly Peran[] }[] = [
@@ -35,8 +35,9 @@ const RUTE: { rute: string; roles: readonly Peran[] }[] = [
   { rute: "/riwayat-pergerakan", roles: SEMUA_PERAN },
   { rute: "/batch-sterilisasi", roles: CSSD },
   { rute: "/detail-batch", roles: CSSD },
-  { rute: "/konfirmasi-penerimaan", roles: UNIT_MEDIS },
-  { rute: "/detail-konfirmasi", roles: UNIT_MEDIS },
+  // CSSD juga mengonfirmasi penerimaan pengembalian alat kotor dari unit.
+  { rute: "/konfirmasi-penerimaan", roles: KONFIRMASI },
+  { rute: "/detail-konfirmasi", roles: KONFIRMASI },
   { rute: "/daftar-laporan", roles: LAPORAN },
   { rute: "/detail-laporan", roles: LAPORAN },
   { rute: "/manajemen-pengguna", roles: ADMIN },
